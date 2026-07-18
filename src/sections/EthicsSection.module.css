@@ -1,0 +1,104 @@
+.principlesGrid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .principlesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.principleCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.principleIconWrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.principleIconWrap svg {
+  color: var(--color-accent);
+}
+
+.principleTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.principleBody {
+  color: var(--color-text-muted);
+  line-height: 1.625;
+  font-size: 0.875rem;
+}
+
+.examplesBlock {
+  margin-top: 4rem;
+}
+
+.examplesHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.examplesHeading svg {
+  color: var(--color-accent);
+}
+
+.examplesTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.examplesGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .examplesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.exampleCard {
+  background: linear-gradient(135deg, rgba(28, 25, 23, 0.8), rgba(41, 37, 36, 0.6));
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.exampleCard:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.exampleTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent);
+}
+
+.exampleBody {
+  color: var(--color-text-muted);
+  line-height: 1.625;
+  font-size: 0.875rem;
+}

@@ -1,0 +1,322 @@
+.tabs {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--color-text);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.tabActive {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
+.tabActive:hover {
+  color: var(--color-bg);
+}
+
+.tabSecondary {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+  border-color: var(--color-secondary);
+}
+
+.tabSecondary:hover {
+  color: var(--color-bg);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.content {
+  margin-top: 2.5rem;
+}
+
+/* Skills */
+.skillsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skillsCategory {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Projects */
+.projectsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.projectCard {
+  background: linear-gradient(135deg, rgba(28, 25, 23, 0.8), rgba(41, 37, 36, 0.6));
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.projectHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.iconLink:hover {
+  color: var(--color-primary);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.projectSection {
+  margin-bottom: 0.75rem;
+}
+
+.projectLabel {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.labelAccent {
+  color: var(--color-accent);
+}
+
+.labelSecondary {
+  color: var(--color-secondary);
+}
+
+.projectText {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.625;
+}
+
+.expandButton {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.expandButton:hover {
+  color: var(--color-primary-hover);
+}
+
+.chevron {
+  transition: transform var(--transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.expandContent {
+  overflow: hidden;
+}
+
+.expandInner {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.expandLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.labelWarning {
+  color: var(--color-warning);
+}
+
+.labelPrimary {
+  color: var(--color-primary);
+}
+
+/* Certifications */
+.certGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .certGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.certIconWrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-secondary-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.certIconWrap svg {
+  color: var(--color-secondary);
+}
+
+.certYear {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.certTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.certIssuer {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.certDetails {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.625;
+}
+
+/* Resume */
+.resumeWrap {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.resumeIcon {
+  color: var(--color-primary);
+}
+
+.resumeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.resumeHeaderTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.resumeSummary {
+  color: var(--color-text-muted);
+  line-height: 1.625;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
