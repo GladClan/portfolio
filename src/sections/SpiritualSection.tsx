@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Milestone, BookOpen, PenLine, TrendingUp, Quote, type LucideIcon } from 'lucide-react';
+import { Milestone, BookOpen, PenLine, TrendingUp, Quote, type LucideIcon, ExternalLink, Music2, Music4 } from 'lucide-react';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
@@ -8,13 +8,14 @@ import Card from '../components/Card';
 import { spiritualContent } from '../data/content';
 import s from './SpiritualSection.module.css';
 
-type Tab = 'milestones' | 'scriptures' | 'reflections' | 'growth';
+type Tab = 'milestones' | 'scriptures' | 'talks' | 'music' | 'growth';
 
 const tabs: { id: Tab; label: string; icon: LucideIcon }[] = [
   { id: 'milestones', label: 'Milestones', icon: Milestone },
   { id: 'scriptures', label: 'Scriptures', icon: BookOpen },
-  { id: 'reflections', label: 'Reflections', icon: PenLine },
-  { id: 'growth', label: 'Growth', icon: TrendingUp },
+  { id: 'talks', label: 'Talks', icon: PenLine },
+  { id: 'music', label: 'Music', icon: Music4 },
+  // { id: 'growth', label: 'Growth', icon: TrendingUp },
 ];
 
 export default function SpiritualSection() {
@@ -57,8 +58,9 @@ export default function SpiritualSection() {
           >
             {activeTab === 'milestones' && <MilestonesTab />}
             {activeTab === 'scriptures' && <ScripturesTab />}
-            {activeTab === 'reflections' && <ReflectionsTab />}
-            {activeTab === 'growth' && <GrowthTab />}
+            {activeTab === 'talks' && <TalksTab />}
+            {activeTab === 'music' && <SongsTab />}
+            {/* {activeTab === 'growth' && <GrowthTab />} */}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -99,7 +101,16 @@ function ScripturesTab() {
         <Card key={i} delay={i * 0.1}>
           <div className={s.scriptureHeader}>
             <Quote size={24} />
-            <p className={s.scriptureRef}>{scripture.reference}</p>
+            <p>{scripture.reference}</p>
+            <a
+              href={scripture.hyperlink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.iconLink}
+              aria-label={`${scripture.reference}`}
+            >
+              <ExternalLink size={16} />
+            </a>
           </div>
           <blockquote className={s.scriptureText}>
             {scripture.text}
@@ -111,16 +122,50 @@ function ScripturesTab() {
   );
 }
 
-function ReflectionsTab() {
+function TalksTab() {
   return (
     <div className={s.reflectionsList}>
-      {spiritualContent.reflections.map((r, i) => (
+      {spiritualContent.talks.map((r, i) => (
         <Card key={i} delay={i * 0.1}>
           <div className={s.reflectionHeader}>
             <PenLine size={20} />
             <h3 className={s.reflectionTitle}>{r.title}</h3>
+            <a
+              href={r.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.iconLink}
+              aria-label={`talk-${i}`}
+            >
+              <ExternalLink size={16} />
+            </a>
           </div>
-          <p className={s.reflectionBody}>{r.body}</p>
+          <p className={s.reflectionBody}>{r.reflection}</p>
+        </Card>
+      ))}
+    </div>
+  );
+}
+
+function SongsTab() {
+  return (
+    <div className={s.reflectionsList}>
+      {spiritualContent.songs.map((r, i) => (
+        <Card key={i} delay={i * 0.1}>
+          <div className={s.reflectionHeader}>
+            <Music2 size={20} />
+            <h3 className={s.reflectionTitle}>{r.title}</h3>
+            <a
+              href={r.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.iconLink}
+              aria-label={`talk-${i}`}
+            >
+              <ExternalLink size={16} />
+            </a>
+          </div>
+          <p className={s.reflectionBody}>{r.reflection}</p>
         </Card>
       ))}
     </div>

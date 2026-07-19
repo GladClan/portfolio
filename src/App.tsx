@@ -5,7 +5,7 @@ import AboutSection from './sections/AboutSection';
 import PrinciplesSection from './sections/PrinciplesSection';
 import ProfessionalSection from './sections/ProfessionalSection';
 import SpiritualSection from './sections/SpiritualSection';
-import FaithSection from './sections/FaithSection';
+// import FaithSection from './sections/FaithSection';
 import EthicsSection from './sections/EthicsSection';
 import styles from './App.module.css';
 
@@ -22,7 +22,7 @@ function App() {
         <PrinciplesSection />
         <ProfessionalSection />
         <SpiritualSection />
-        <FaithSection />
+        {/* <FaithSection /> */}
         <EthicsSection />
       </main>
       <Footer />

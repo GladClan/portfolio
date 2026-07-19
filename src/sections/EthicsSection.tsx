@@ -1,10 +1,11 @@
-import { Shield, Eye, Scale, ClipboardCheck, AlertTriangle, type LucideIcon } from 'lucide-react';
+import { Shield, Eye, Scale, ClipboardCheck, AlertTriangle, type LucideIcon, MessagesSquare } from 'lucide-react';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
 import Card from '../components/Card';
 import { ethicalContent } from '../data/content';
 import s from './EthicsSection.module.css';
+import { body } from 'framer-motion/client';
 
 const principleIcons: LucideIcon[] = [Shield, Eye, Scale, ClipboardCheck];
 
@@ -12,13 +13,13 @@ export default function EthicsSection() {
   return (
     <Section id="ethics" className="surface-bg">
       <SectionHeading
-        eyebrow="Doing right by users"
+        eyebrow="The AWS Kiro Incident"
         title="Ethical Responsibility"
         subtitle={ethicalContent.intro}
       />
 
       <div className={s.principlesGrid}>
-        {ethicalContent.principles.map((p, i) => {
+        {ethicalContent.situation.map((p, i) => {
           const Icon = principleIcons[i % principleIcons.length];
           return (
             <Card key={i} delay={i * 0.1}>
@@ -28,7 +29,11 @@ export default function EthicsSection() {
                 </div>
                 <div>
                   <h3 className={s.principleTitle}>{p.title}</h3>
-                  <p className={s.principleBody}>{p.body}</p>
+                  <ul>
+                    {p.body.map((item, i) => 
+                      <li key={i} className={s.principleBody}>{item}</li>
+                    )}
+                  </ul>
                 </div>
               </div>
             </Card>
@@ -39,16 +44,16 @@ export default function EthicsSection() {
       <div className={s.examplesBlock}>
         <Reveal>
           <div className={s.examplesHeading}>
-            <AlertTriangle size={24} />
-            <h3 className={s.examplesTitle}>In Practice: Real-World Examples</h3>
+            <MessagesSquare size={48} />
+            <h3 className={s.examplesTitle}>Discussion: {ethicalContent.topic}</h3>
           </div>
         </Reveal>
         <div className={s.examplesGrid}>
-          {ethicalContent.examples.map((ex, i) => (
+          {ethicalContent.discussionPoints.map((dp, i) => (
             <Reveal key={i} delay={i * 0.1}>
               <article className={s.exampleCard}>
-                <h4 className={s.exampleTitle}>{ex.title}</h4>
-                <p className={s.exampleBody}>{ex.body}</p>
+                <h4 className={s.exampleTitle}>{dp.title}</h4>
+                <p className={s.exampleBody}>{dp.body}</p>
               </article>
             </Reveal>
           ))}

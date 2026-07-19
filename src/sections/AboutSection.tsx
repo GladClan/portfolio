@@ -17,7 +17,11 @@ export default function AboutSection() {
 
       <div className={s.biography}>
         <Reveal>
-          <p className={s.bioText}>{aboutContent.biography}</p>
+          <div>
+            {aboutContent.biography.map((paragraph, index) =>
+              <p key={index} className={s.bioText}>{paragraph}</p>
+            )}
+          </div>
         </Reveal>
       </div>
 

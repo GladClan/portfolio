@@ -20,7 +20,7 @@ export interface TimelineEvent {
 }
 
 export interface AboutContent {
-  biography: string;
+  biography: string[];
   education: { institution: string; degree: string; year: string; details: string }[];
   interests: string[];
   goals: string[];
@@ -30,9 +30,10 @@ export interface AboutContent {
 export interface Principle {
   id: string;
   title: string;
+  title_long: string,
+  subtitle: string,
   icon: string;
   reflection: string;
-  examples: string[];
 }
 
 export interface SkillCategory {
@@ -46,7 +47,7 @@ export interface Project {
   problem: string;
   solution: string;
   technologies: string[];
-  challenges: string;
+  challenges: string[];
   lessons: string;
   githubUrl?: string;
   demoUrl?: string;
@@ -79,19 +80,28 @@ export interface SpiritualMilestone {
 
 export interface Scripture {
   reference: string;
+  hyperlink: string;
   text: string;
   reflection: string;
 }
 
-export interface Reflection {
+export interface Song {
   title: string;
-  body: string;
+  link: string;
+  reflection: string;
+}
+
+export interface Talk {
+  title: string;
+  link: string;
+  reflection: string;
 }
 
 export interface SpiritualContent {
   milestones: SpiritualMilestone[];
   scriptures: Scripture[];
-  reflections: Reflection[];
+  songs: Song[];
+  talks: Talk[];
   personalGrowth: string;
 }
 
@@ -107,6 +117,7 @@ export interface FaithContent {
 
 export interface EthicalContent {
   intro: string;
-  principles: { title: string; body: string }[];
-  examples: { title: string; body: string }[];
+  topic: string;
+  situation: { title: string; body: string[] }[];
+  discussionPoints: { title: string; body: string }[];
 }

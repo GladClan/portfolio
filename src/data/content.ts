@@ -15,7 +15,7 @@ export const navItems: NavItem[] = [
   { id: 'principles', label: 'Principles' },
   { id: 'professional', label: 'Professional' },
   { id: 'spiritual', label: 'Spiritual' },
-  { id: 'faith', label: 'Faith & SE' },
+  // { id: 'faith', label: 'Faith & SE' },
   { id: 'ethics', label: 'Ethics' },
 ];
 
@@ -23,7 +23,8 @@ export const homeContent: HomeContent = {
   name: 'Isaac Glad',
   title: 'Software Engineer & Faith-Driven Technologist',
   intro:
-    'I build software with intention—crafting systems that are not only robust and elegant, but ethically grounded. This portfolio traces my journey as a developer and as a person of faith, exploring where engineering excellence meets spiritual responsibility.',
+    'Hello there! I\'m a software engineer who builds software with intention—crafting systems that are not only robust and elegant, but ethically grounded. This portfolio traces my journey as a developer and as a person of faith, exploring where engineering excellence meets spiritual responsibility.\n\n'
+      + 'In a world of vibe coders, I\'m a coder who actually knows what they\'re doing.',
   resumeUrl: '#professional',
   githubUrl: 'https://github.com/gladclan',
   linkedinUrl: 'https://linkedin.com/in/isaac-glad',
@@ -32,7 +33,10 @@ export const homeContent: HomeContent = {
 
 export const aboutContent: AboutContent = {
   biography:
-    'I am a software engineer who believes that code is never written in a vacuum — every system reflects the values of its creator. My journey began with a curiosity about how things work, evolved into a passion for building meaningful software, and deepened through a faith that asks me to consider the human impact of every decision I make. I pursue excellence not as an end in itself, but as a form of stewardship—using the skills I have been given to serve others well.',
+    [
+      "I believe software engineering is one of today's most creative disciplines. It combines logic, problem-solving, collaboration, and innovation to create tools and experiences that can improve people's lives. As a Software Engineering student at Ensign College, I'm passionate about learning, building meaningful solutions, and producing quality work that makes a positive difference. My faith shapes the way I approach both technology and life, reminding me to build strong relationships, serve others, and continue growing through every challenge and opportunity.",
+      "Whether I'm developing software, collaborating with a team, or exploring new technologies, my goal is to use my skills to create something meaningful. I hope to build software that not only solves problems but also reflects integrity, creativity, and a genuine desire to help others."
+    ],
   education: [
     {
       institution: 'Ensign College',
@@ -48,29 +52,51 @@ export const aboutContent: AboutContent = {
     // },
   ],
   interests: [
-    'Distributed systems design',
-    'Open-source contribution',
-    'Technical writing and mentoring',
-    'Faith and technology ethics',
+    'Software Development',
+    'Education',
+    'Game design',
+    'Music',
+    'Art and creativity',
+    'Building meaningful user experiences',
     'Hiking and nature',
+    'Legos',
     'Fantasy and sci-fi novels',
   ],
+//   A slightly different approach
+// Rather than a list of hobbies, consider making it a series of "I enjoy..." statements.
+// For example:
+// **Things I Enjoy**
+//   Designing software architecture and solving complex technical problems.
+//   Creating things—whether through software, music, writing, or games.
+//   Learning new technologies and understanding how they work.
+//   Collaborating with others to bring ideas to life.
+//   Building tools that make a meaningful difference in people's lives.
+//   Exploring how faith, creativity, and technology can work together to serve others.
   goals: [
+    'Document and map personal strengths and skills gained during my time at Ensign College',
+    'Establish a long-term goal-setting and planning routine to foster continuous spiritual and personal growth',
     'Build software that genuinely serves its users and respects their dignity.',
-    'Mentor junior developers, especially those from underrepresented backgrounds.',
-    'Contribute to open-source projects that benefit non-profits and communities.',
     'Continue exploring the intersection of faith, ethics, and technology.',
-    'Speak and write about responsible engineering practices.',
   ],
   timeline: [
+    {
+      year: '2016',
+      title: 'The Seed was planted',
+      description: 'Took an Introduction to Technology class, which introduced me to block coding. Naturally, my first creation was a simple video game.'
+    },
     {
       year: '2018',
       title: 'First Line of Code',
       description: 'Wrote my first C# windows forms app in a high school intro CS course and was instantly hooked on the art of programming.',
     },
+    // {
+    //   year: '2021',
+    //   title: 'Volunteer minister',
+    //   description: 'Took time to serve, uplift, strengthen, and help people, under the direction of the Church of Jesus Christ of Latter-day Saints.'
+    // },
     {
       year: '2023',
-      title: 'Beginning of Poststecondary Education',
+      title: 'Off to College',
       description: 'Started schooling at Ensign College, learning how to develop software applications, solve technical problems, work in teams, manage projects, mentor other programmers, and so much more.',
     },
     {
@@ -94,39 +120,30 @@ export const aboutContent: AboutContent = {
 export const principles: Principle[] = [
   {
     id: 'connection',
-    title: 'Connection to God, others, and to self',
+    title: 'Connection',
+    title_long: 'Connection with God, with myself, and with others',
+    subtitle: 'How the principle of connection influences the way I approach my work and relationships.',
     icon: 'HeartHandshake',
     reflection:
-      'Colossians 3:23 reminds me that whatever I do, I should work at it with all my heart, as working for the Lord. This reframes excellence from self-promotion to an act of worship. When I write clean code, design thoughtful interfaces, or refactor a messy module, I am not merely being professional—I am honoring the One who gave me the ability to do this work. Excellence becomes not a burden but a joy, because the audience is always God first.',
-    examples: [
-      'Refactoring legacy code to be readable and maintainable, even when no one will notice.',
-      'Writing thorough tests because quality is a form of stewardship, not just a metric.',
-      'Reviewing pull requests with care, treating colleagues\' work with dignity.',
-    ],
+      "This principle is rooted in Christ's invitation to love God and love our neighbors as ourselves. As I seek to strengthen my relationship with God, I gain greater clarity, purpose, and the companionship of the Holy Ghost. That spiritual foundation also helps me better understand myself and appreciate the unique perspectives and experiences of those around me. Whether I'm collaborating on a software project, listening to a teammate's ideas, or serving others, I strive to build genuine connections that foster trust, unity, and meaningful collaboration.",
   },
   {
     id: 'difference',
     title: 'Making a difference',
+    title_long: 'Making a difference in the lives of those around me—my family, my friends, my community, and in my own life',
+    subtitle: 'Viewing each project as an opportunity to serve others, solve meaningful problems, and leave a positive impact.',
     icon: 'Sparkles',
     reflection:
-      'Software is built in layers—infrastructure, logic, interface—and integrity must run through all of them. Proverbs 11:3 says, "The integrity of the upright guides them." In practice, this means being honest about technical debt, transparent about risks, refusing to ship code I know is broken, and speaking up when a feature could harm users. Integrity is not just about not lying; it is about building systems that can be trusted because the people behind them can be trusted.',
-    examples: [
-      'Disclosing a security vulnerability I discovered, even when it was inconvenient.',
-      'Pushing back on unrealistic deadlines that would force cutting corners on quality.',
-      'Being transparent with stakeholders about what a timeline actually requires.',
-    ],
+      "I believe that my talents and opportunities are gifts from God, meant to bless the lives of others. This principle reminds me that success is measured not only by what I accomplish, but by the positive influence I have on the people around me. Whether I'm developing software, helping someone learn, or contributing to a team, I want my work to improve lives, encourage growth, and create lasting value. Every project is an opportunity to serve with excellence and purpose.",
   },
   {
     id: 'creativity',
     title: 'Creativity and shared experiences',
+    title_long: 'Encouraging creativity and sharing fun and meaningful stories and experiences',
+    subtitle: 'Recognizing software as one of many creative outlets through which I can inspire, teach, and connect with others.',
     icon: 'ShieldCheck',
     reflection:
-      'Jesus said, "Whoever wants to become great among you must be your servant" (Mark 10:43). In software, this means the user is not a metric to optimize but a person to serve. It means building accessible interfaces, writing documentation that helps rather than gatekeeps, and choosing features that solve real problems rather than inflate engagement. It also means mentoring others, sharing credit, and using my platform to amplify voices that are often overlooked in tech.',
-    examples: [
-      'Prioritizing accessibility features even when they are not on the roadmap.',
-      'Writing documentation and guides so the next developer does not struggle alone.',
-      'Mentoring junior developers and advocating for their growth over my own visibility.',
-    ],
+      "God is the ultimate Creator, and I believe creativity is one of His gifts to His children. Throughout my life I've enjoyed creating through music, writing, art, games, and now software engineering. To me, programming is more than writing code—it's another way to create meaningful experiences, solve problems, and tell stories. I also believe that fun and storytelling can be powerful tools for building relationships, teaching important ideas, and sharing truths in ways that resonate with others. Creativity becomes most meaningful when it brings people together and points them toward something greater than ourselves.",
   },
 ];
 
@@ -134,20 +151,20 @@ export const professionalContent: ProfessionalContent = {
   skills: [
     {
       category: 'Languages',
-      skills: ['TypeScript', 'Python', 'Go', 'SQL', 'Java'],
+      skills: ['C#', 'TypeScript', 'Python', 'SQL', 'Java', 'YAML'],
     },
     {
       category: 'Frontend',
-      skills: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Accessibility (WCAG)'],
+      skills: ['HTML', 'CSS', 'React', 'Next.js', 'API Integration'],
     },
     {
       category: 'Backend',
-      skills: ['Node.js', 'PostgreSQL', 'GraphQL', 'REST API Design', 'Microservices'],
+      skills: ['ASP.NET', 'Node.js', 'REST API Design'],
     },
-    {
-      category: 'DevOps & Cloud',
-      skills: ['AWS (EC2, S3, Lambda)', 'Docker', 'CI/CD', 'Terraform', 'Monitoring & Alerting'],
-    },
+    // {
+    //   category: 'DevOps & Cloud',
+    //   skills: ['AWS (EC2, S3, Lambda)', 'Docker', 'CI/CD', 'Terraform', 'Monitoring & Alerting'],
+    // },
     {
       category: 'Practices',
       skills: ['Test-Driven Development', 'Code Review', 'Agile', 'System Design', 'Technical Writing'],
@@ -155,146 +172,271 @@ export const professionalContent: ProfessionalContent = {
   ],
   projects: [
     {
-      id: 'collab-platform',
-      title: 'Non-Profit Collaboration Platform',
+      id: 'mcp',
+      title: 'SQL MCP Server',
       problem:
-        'A local non-profit coordinated volunteers through spreadsheets and group chats, leading to missed shifts, duplicated efforts, and burnout among coordinators.',
+        'The company had a large legacy Point of Sale database containing valuable business information, but querying it required extensive SQL knowledge. Business users wanted to ask natural language questions through Claude AI without exposing sensitive customer information or requiring direct database access.',
       solution:
-        'Built a real-time scheduling and communication platform with role-based access, automated reminders, and a mobile-first interface optimized for volunteers with limited tech experience.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'WebSocket', 'AWS Lambda'],
+        "I designed and implemented a custom Model Context Protocol (MCP) server in C# that securely connected Claude AI to the company's SQL Server database. The system translated natural language requests into validated SQL queries while enforcing security rules, sanitizing sensitive information, and providing meaningful business insights.",
+      technologies: ['Model Context Protocol (MCP)', 'C#', 'ASP.NET Core', 'SQL', 'REST APIs', 'GIT/GitHub', 'LAN Networking', 'Claude AI'],
       challenges:
-        'Many volunteers had older devices and unreliable connectivity. I had to design for low bandwidth, implement offline-first syncing, and ensure the interface was usable for non-technical users across multiple languages.',
+        [
+          'Reverse-engineering a complex legacy database with limited documentation',
+          'Designing a semantic layer that translated business language into database structures',
+          'Balancing flexibility with security and data privacy',
+          'Designing a scalable architecture that could support future expansion'
+        ],
       lessons:
-        'Accessibility is not just about screen readers—it is about designing for the full range of human circumstances. I learned to test on real devices, talk to actual users, and let their needs—not my assumptions—drive decisions.',
-      githubUrl: 'https://github.com',
+        'This project taught me how much successful software engineering depends on understanding the problem before writing code. I gained experience in system architecture, API design, database analysis, and technical documentation, while also learning the importance of security, iterative development, and clear communication with stakeholders.'
     },
     {
-      id: 'ethics-dashboard',
-      title: 'AI Ethics Dashboard',
+      id: 'scam-awareness',
+      title: 'Scam Awareness Website',
       problem:
-        'A machine learning team had no systematic way to track bias, fairness metrics, or model impact across different demographic groups.',
+        'Many people struggle to recognize increasingly sophisticated online scams, making them vulnerable to fraud and identity theft.',
       solution:
-        'Designed and built an internal dashboard that visualizes model performance across demographic slices, flags disparities, and generates reports for compliance and ethics review boards.',
-      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'PostgreSQL'],
+        'I developed an interactive educational website that teaches users how to identify common scams, recognize warning signs, and respond safely through practical examples and educational resources.',
+      technologies: ['TypeScript', 'CSS', 'React', 'Vite', 'Responsive web design', 'Educational content design', ],
       challenges:
-        'Defining "fairness" is philosophically and mathematically complex. I had to build a system flexible enough to support multiple fairness definitions while making the trade-offs transparent to non-technical stakeholders.',
+        [
+          'Presenting cybersecurity concepts in language accessible to non-technical users',
+          'Organizing information without overwhelming visitors',
+          'Designing an engaging learning experience rather than simply listing facts'
+        ],
       lessons:
-        'Technology is never neutral. Every metric we choose to optimize reflects a value judgment. Building this tool taught me that ethical engineering requires making those judgments visible and debatable, not hiding them behind algorithms.',
-      githubUrl: 'https://github.com',
+        'This project reinforced the importance of designing software around the needs of its users. I learned that technical knowledge has the greatest impact when it is communicated clearly and used to help others make informed decisions.',
+      githubUrl: 'https://github.com/GladClan/ScamShield',
     },
     {
-      id: 'open-source-docs',
-      title: 'Open-Source Documentation Framework',
+      id: 'dashboard',
+      title: 'Technical Writing Dashboard',
       problem:
-        'Several small open-source projects had outdated, incomplete, or missing documentation, making them inaccessible to new contributors.',
+        'Our team needed to design an interactive dashboard while simultaneously documenting each phase of the software development lifecycle for both technical and non-technical stakeholders.',
       solution:
-        'Created a documentation framework with templates, automated API reference generation, and a contribution guide generator that lowers the barrier for maintainers to produce high-quality docs.',
-      technologies: ['TypeScript', 'Vite', 'Markdown', 'GitHub Actions'],
+        "As project manager, I coordinated the team's work, delegated responsibilities, tracked progress, and ensured that both the dashboard and supporting documentation met project requirements.",
+      technologies: ['Microsoft Excel', 'Project Management', 'Software development lifecycle (SDLC)', 'Technical documentation', 'Team coordination', 'Presentation skills'],
       challenges:
-        'Documentation tools often assume a level of expertise that small project maintainers do not have. The challenge was building something powerful enough to be useful but simple enough that a solo maintainer could adopt it in an afternoon.',
+        [
+          'Coordinating schedules across multiple team members',
+          'Balancing leadership responsibilities with individual technical contributions',
+          'Maintaining consistent communication throughout the project',
+          'Keeping documentation aligned with project progress'
+        ],
       lessons:
-        'Good documentation is an act of service. Every hour spent writing clear docs saves dozens of hours of confusion for others. I learned to see documentation not as a chore but as a way of loving my neighbor in the open-source community.',
-      githubUrl: 'https://github.com',
-      demoUrl: 'https://example.com',
+        'Leading this project showed me that successful software development depends just as much on communication and organization as it does on technical ability. I developed greater confidence in leading teams, facilitating collaboration, and adapting to changing project needs.',
     },
+    {
+      id: 'github-classrooms',
+      title: 'Canvas–GitHub Classroom Integration API',
+      problem:
+        'Managing programming assignments across Canvas and GitHub Classroom required repetitive manual work for instructors and created opportunities for human error.',
+      solution:
+        "Our team developed an API that integrated the two platforms to automate assignment management and streamline the grading workflow.",
+      technologies: ['TypeScript', 'Project Management', 'Peer Code Reviews', 'Technical Presentations', 'Authentication', 'Team Collaboration'],
+      challenges:
+        [
+          'Understanding two different systems and how they communicate',
+          'Designing reliable API interactions',
+          'Coordinating work across teammates with different experience levels',
+          'Explaining technical decisions to both technical and non-technical audiences'
+        ],
+      lessons:
+        'This project strengthened my understanding of API design and collaborative software development. I also gained valuable experience conducting peer reviews, presenting technical information, and adapting my communication style for different audiences.',
+    },
+    {
+      id: 'lamps-game',
+      title: 'Lamps Game',
+      problem:
+        'Our goal was to create a game that communicated a meaningful message while delivering an engaging player experience.',
+      solution:
+        "Our team developed a narrative-driven game centered on using one's light to help others, contributing to implementation, testing, refinement, and feature development throughout the project.",
+      technologies: ['Unity Game Engine', 'C#', 'Software testing', 'UI implementation'],
+      challenges:
+        [
+          'Balancing gameplay with storytelling',
+          'Coordinating contributions across the team',
+          'Identifying and fixing bugs within project deadlines',
+          'Maintaining consistency throughout development'
+        ],
+      lessons:
+        'This project taught me that software can be a powerful medium for storytelling and positive influence. I strengthened my testing, debugging, and teamwork skills while seeing firsthand how thoughtful design can create meaningful experiences for users.',
+    },
+    {
+      id: 'text-based-rpg',
+      title: 'Text-Based RPG Dungeon Crawler',
+      problem:
+        'I wanted to create a game that combined strategic gameplay with meaningful player choices while giving myself the opportunity to explore full-stack game development using modern technologies.',
+      solution:
+        "I'm developing a turn-based RPG featuring party management, tactical combat, character progression, and narrative-driven gameplay using Next.js, TypeScript, and an ASP.NET backend.",
+      technologies: ['Next.js', 'TypeScript', 'C#', 'ASP.NET Core', 'Git/GitHub', 'Full-stack development', 'Data modeling', 'Backend API development'],
+      challenges:
+        [
+          'Designing game systems that are engaging and balanced',
+          'Separating game logic from presentation',
+          'Managing project scope as new ideas emerge',
+          'Learning how frontend and backend systems interact in a game environment'
+        ],
+      lessons:
+        'This project has strengthened my object-oriented design skills and reinforced the value of planning before implementation. It has also reminded me that creativity and software engineering go hand in hand, as building games requires both technical problem-solving and thoughtful user experience design.',
+      githubUrl: 'https://github.com/GladClan/text-dungeon-crawler',
+      },
   ],
   certifications: [
     {
-      title: 'AWS Solutions Architect Associate',
-      issuer: 'Amazon Web Services',
+      title: 'Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)',
+      issuer: 'Microsoft',
       year: '2024',
-      details: 'Demonstrated proficiency in designing distributed systems on AWS, with a focus on reliability, cost optimization, and security best practices.',
+      details: 'I can create and edit a workbook with multiple sheets, and use graphic elements to represent data visually including professional-looking budgets, financial statements, performance charts, and data-entry logs.',
     },
     {
-      title: 'Meta Front-End Developer Professional',
-      issuer: 'Meta',
-      year: '2023',
-      details: 'Completed a comprehensive curriculum covering React, accessibility, UX design principles, and front-end engineering best practices.',
+      title: 'CompTIA A+ Core 1 (220-1201) Cert Prep',
+      issuer: 'LinkedIn Learning',
+      year: '2025',
+      details: 'A foundational training program covering critical hardware, networking, and cloud computing skills required for entry-level tech support roles, such as help desk specialists and IT technicians.',
     },
     {
-      title: 'Google UX Design Professional',
-      issuer: 'Google',
-      year: '2023',
-      details: 'Learned user-centered design methodologies, including user research, wireframing, prototyping, and usability testing.',
+      title: 'Networking Devices and Initial Configuration',
+      issuer: 'Cisco',
+      year: '2025',
+      details: 'Learned characteristics and benefits of cloud and virtualization, explored how to provide Internet Protocol (IP) addresses to devices, calculate an IP addressing scheme, configured Cisco devices to create a small network and tested for connectivity issues. Participated in up to 7 labs and 12 Cisco Packet Tracer activities..',
+    },
+    {
+      title: 'Network Support and Security',
+      issuer: 'Cisco',
+      year: '2025',
+      details: 'Learned how to support endpoints, networks, and users including diagnostics and documentation as a member of a help desk team as well as an in-depth view of troubleshooting of networks and endpoints and knowledge and skills regarding supporting users and networks remotely. Participated in up to 10 labs and Cisco PT activities.',
+    },
+    {
+      title: 'Network Addressing and Basic Troubleshooting',
+      issuer: 'Cisco',
+      year: '2025',
+      details: 'Understood physical, data link and network layers, how they work together to provide end-to-end connectivity, and also understands IPv6 addressing functions and how to obtain one and the neighbor discovery process. Practiced troubleshooting skills to keep a network up and running in up to 13 Cisco Packet Tracer activities.',
+    },
+    {
+      title: 'Networking Basics',
+      issuer: 'Cisco',
+      year: '2025',
+      details: 'Understood the types of networks, how they work, how devices send and receive data, the types of network cabling, how IP addresses find information on the Internet, how transport and applications operate, and has practiced building a home wireless network. Participated in up to 13 Cisco Packet Tracer activities.',
     },
   ],
   resume: {
     summary:
-      'Software engineer with 3+ years of experience building web applications, distributed systems, and developer tools. Passionate about accessible, ethical, and well-tested software. Committed to mentoring and open-source contribution.',
-    pdfUrl: '#',
+      'Software Engineering student with experience in backend development, APIs, databases, and collaborative software projects. Passionate about creating secure, meaningful solutions through thoughtful design, continuous learning, and effective teamwork. I enjoy combining technical problem-solving with creativity to build software that serves people and makes a positive impact.',
+    pdfUrl: '/Isaac%20Glad%20Resume%202026.pdf',
   },
 };
 
 export const spiritualContent: SpiritualContent = {
   milestones: [
     {
-      year: '2018',
-      title: 'First Questions',
-      description: 'Started asking deeper questions about purpose, meaning, and whether my work mattered beyond a paycheck.',
-    },
-    {
-      year: '2019',
-      title: 'Commitment of Faith',
-      description: 'Made a personal commitment to follow Christ and began exploring what that meant for every area of life, including my career.',
+      year: '2012-2019',
+      title: 'Personal experience',
+      description: 'Through personal trials and difficulties, I was constantly reminded and gradually taught that I need to turn to God. By relying on Him, I can overcome adversity. Eventually I learned that adversity is there as a reminder to turn to my Heavenly Father',
     },
     {
       year: '2021',
-      title: 'First Short-Term Mission Trip',
-      description: 'Traveled to support a community technology literacy program. Saw firsthand how technology can empower or exclude.',
+      title: 'Two-year LDS Mission',
+      description: "Being the first in my family to take this leap and server the Lord, I didn't know what to expect. But it surely wasn't the incredible feeling of teaching anotehr person something meaningful and new, sharing meaningful experiences, as well as deeply spiritual experience that changed my life forever. " + 
+        "But along with that, I aso learned the power of overcoming trials through serving others.",
     },
     {
-      year: '2022',
-      title: 'Integrating Faith & Work',
-      description: 'Began intentionally studying what Scripture says about work, justice, and technology. Started writing reflections on the intersection.',
+      year: '2023',
+      title: 'Coming home from mission service',
+      description: "Something that isn't widel recognized is the trial of not knowing whether you did your best. After coming home, I struggled to know whether I had done enough. But through heartfelt and sincere connection with God, I came to know that He was—and is—proud of me as His son.",
     },
     {
       year: '2024',
-      title: 'Leading a Faith & Tech Group',
-      description: 'Started a small group for Christian tech workers to discuss ethical dilemmas, encourage one another, and pray for our work.',
+      title: 'Courting my earthly angel',
+      description: "It's cheesy, I know, but dating and marriage have taught me so much about God's mercy and love. There is no way I could have gotten together with my wife if it had not been for divine intervention. And I testify unashamedly that she is my earthly angel. " +
+        "She is there with me in good times and bad, and she helps me feel my Saviour's love when all I want to do is curl up in a ball and block out the world. Through her, I've learned that God speaks through other people, and works miracles through those close to us.",
     },
   ],
   scriptures: [
     {
-      reference: 'Colossians 3:23',
-      text: 'Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.',
+      reference: 'Ether 12:27',
+      hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12?lang=eng&id=p27#p27',
+      text: 'And if men come unto me I will show unto them their weakness. I give unto men weakness that they may be humble; and my grace is sufficient for all men that humble themselves before me; for if they humble themselves before me, and have faith in me, then will I make weak things become strong unto them.',
       reflection:
-        'This verse reframes my entire workday. The code I write, the meetings I attend, the reviews I give—all are offered to God. It removes the divide between "sacred" and "secular" work.',
+        'To me, this scripture is a reminder of how I need to rely on the Saviour as a source of strength. It reminds me to give myself grace and not be too hard on myself, because in the Lord\'s hands, I can do incredible things.' +
+          'Also, during my experience as a missionary, I realized that there is a double meaning here — the closer I get to Jesus, the more imperfect I will see myself. Realizing that helped me feel confident again when I had felt overburdened by my own imperfection.',
     },
     {
-      reference: 'Proverbs 11:3',
-      text: 'The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity.',
+      reference: 'Mosiah 2:17',
+      hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p17#p17',
+      text: 'And behold, I tell you these things that ye may learn wisdom; that ye may learn that when ye are in the service of your fellow beings ye are only in the service of your God.',
       reflection:
-        'Integrity is not just a personal virtue; it is a practical guide. In software, it means being honest about what my code can and cannot do, and never shipping something I know is broken.',
+        "This verse stands out as the clarion call of going about doing good. It came to mind as an invitation to be in the service of others, thinking of others rather than of myself. To me, this verse is a reminder of my duty and responsibility to use the gifts God has given me to bless and serve others. " +
+          "And on the other side of the coin, it is a reminder and warning to not waste away the time I've been given on this earth in selfish hedonism.",
     },
     {
-      reference: 'Mark 10:43-45',
-      text: 'Whoever wants to become great among you must be your servant, and whoever wants to be first must be slave of all.',
+      reference: 'Mosiah 4:27',
+      hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/4?lang=eng&id=p27#p27',
+      text: 'And see that all these things are done in wisdom and order; for it is not requisite that a man should run faster than he has strength. And again, it is expedient that he should be diligent, that thereby he might win the prize; therefore, all things must be done in order.',
       reflection:
-        'Leadership in tech is often about influence, not title. This passage calls me to use whatever influence I have to serve my team, my users, and my community—not to build a platform for myself.',
+        'Like the scripture in Ether, this is a reminder to me to give myself grace and not overtax myself. Reading this, I am reminded that God is a God of order, and not panicked. He trusts me to be able to do what He needs me to do.',
     },
     {
-      reference: 'Micah 6:8',
-      text: 'He has shown you, O mortal, what is good. And what does the Lord require of you? To act justly and to love mercy and to walk humbly with your God.',
+      reference: 'Alma 18:24:40',
+      hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/18?lang=eng&id=p24-p40#p24',
+      text: 'Ammon teaching king Lamoni, relating the teachings to what he already knew',
       reflection:
-        'A framework for every technical decision: Does this act justly toward users? Does it show mercy to those it might harm? Does it reflect humility about my own limitations and biases?',
+        "This story came to mind as a representative for my value of creativity and sharing stories and experiences. In this chapter, Ammon teaches king Lamoni about God, but in ways that king Lamoni is familiar with and relates to. " +
+          "Ammon creates common ground between them and builds up the king's knowledge and understanding from where it is rather than being stubborn or inflexible in his explanation of the Plan and the Saviour's gospel.",
     },
   ],
-  reflections: [
+  songs: [
     {
-      title: 'On Burnout and Sabbath',
-      body: 'The culture of tech celebrates hustle—late nights, weekend deploys, always-on availability. But the biblical rhythm of Sabbath insists that rest is not laziness; it is trust. When I rest, I acknowledge that the world does not depend on me, that my identity is not my output, and that God sustains what I cannot. Practicing Sabbath has made me a better engineer, not a lesser one.',
+      title: 'Look Unto Christ',
+      link: 'https://youtu.be/UdjWhPoFMKE?t=130',
+      reflection: 'I have a strong emotional connection to this song from the time I had the privilege to be a part of a choir performing it. It offers steady encouragements: "doubt not," "fear not," "heed not," "press on." ' +
+        'The song seems to represent life, going through tribultion, doubts, conspiring foes, and mocking voices, weakness and mourning. Through all of the difficulties, it encourages me to look to the Saviour, my "Lord and Friend."'
     },
     {
-      title: 'On Pride and Code Review',
-      body: 'Code review can be a battleground for ego. I have learned to receive criticism as a gift, to give it with gentleness, and to remember that my worth is not tied to my pull request being merged. Humility in code review is a small but real way to practice the self-emptying love of Christ in a professional context.',
+      title: 'Living Water by James Thorup',
+      link: 'https://www.churchofjesuschrist.org/media/video/2024-03-0060-living-water-official-track-video-feat-james-thorup-1080p-eng-mp4',
+      reflection: 'Something that I\'ve realized I love to hear in song and story is imagery. My favorite songs evoke colors and scenes in the mind that enhance the impact of the song, bringing it to life internally. Parables are an excellent example of this - ' +
+        'the Saviour teaching through situations and experiences that are familiar to the audience. The song Living Water is a splended example of this as well. It relates my personal spiritaul health to a garden that I am tending to. The plants and flowers in it needing attention and care, ' +
+        'and most importantly, water. This song is a vivid reminder to me of the importance of the Saviours "living water" and the healing He brings. Without the Saviour in my life, or when I turn away, it\'s like turning a flower away from the light of the sun. ' +
+        'As I turn back to Him, He reminds me of the healing power of His light, breathing life back into the dying flower that is my soul.'
     },
     {
-      title: 'On Building Systems That Last',
-      body: 'We build software that may outlast our involvement with it. This is a form of stewardship. Am I leaving behind code that the next developer can understand and maintain? Or am I creating a burden? The parable of the talents reminds me that I will be asked to give an account for what I have been entrusted with—including my code.',
+      title: 'Behold the Wounds in Jesus\' Hands',
+      link: 'https://www.churchofjesuschrist.org/media/music/songs/2025-10-behold-the-wounds-in-jesus-hands',
+      reflection: 'I have had some growing experiences in my life that have taught me truly that the Saviour is real and has a physical presence. Singing this song is singing my testimony that Jesus did live. He suffered trials, temptation, and pain - and he did it so that He could heal and comfort me. ' +
+        'Even more than that, He stands beside me, even when I feel so alone, like He should be upset or resentful - He isn\'t. He\'s right there beside me with a knowing smile and a hand on my shoulder, encouraging me to rise up and  get to work.'
     },
   ],
+  talks: [
+    {
+      title: '"Wrestling with Comparisons" by J.B. Haws',
+      link: 'https://speeches.byu.edu/talks/j-b-haws/wrestling-with-comparisons/',
+      reflection: ''
+    },
+    {
+      title: '"Things As They really Are" by Elder David A. Bednar',
+      link: 'https://www.churchofjesuschrist.org/study/ensign/2010/06/things-as-they-really-are',
+      reflection: ''
+    },
+    {
+      title: '"Things As They really Are 2.0" also by Elder David A. Bednar',
+      link: 'https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-young-adults/2024/11/13bednar',
+      reflection: ''
+    },
+    {
+      title: '"Faith to Forgive Grievous Harms: Accepting the Atonement as Restitution" by James R. Rasband',
+      link: 'https://speeches.byu.edu/talks/james-r-rasband/faith-to-forgive-grievous-harms-atonement-restitution/',
+      reflection: 'My first experience with this BYU devotional was during my time as a missionary. The principles of this talk are truly essential, and it has helped me come to a better understanding of forgiveness and restitution. This, paired with other talks, has taught me essential lessons about forgiveness and restitution, ' +
+        'as well as the power of grace - toward myself and toward others. We all want grace and forgiveness, and it is so important (even a divine command) to extend that grace and pardon to others when they make mistakes.'
+    },
+    {
+      title: '"Be 100 Percent Responsible" by Elder Lynn G. Robbins',
+      link: 'https://speeches.byu.edu/talks/lynn-g-robbins/be-100-percent-responsible/',
+      reflection: ''
+    },
+  ],
+	// - 
   personalGrowth:
-    'My spiritual journey has changed how I see my work. I no longer view my career primarily as a path to advancement but as a place of service. I am learning to pray before difficult technical decisions, to seek wisdom from Scripture when facing ethical dilemmas, and to trust that my work—when offered to God—has meaning beyond what I can see. I am not where I want to be, but I am grateful for the progress, and I am confident that He who began a good work in me will carry it on to completion.',
+    '',
 };
 
 export const faithContent: FaithContent = {
@@ -322,37 +464,69 @@ export const faithContent: FaithContent = {
 
 export const ethicalContent: EthicalContent = {
   intro:
-    'Ethics in software engineering is not an add-on or a compliance checklist. It is the practice of asking, at every decision point, "Who does this affect, and how?" The following principles guide my ethical reasoning in technical work.',
-  principles: [
+    'Ethics in software engineering is not an add-on or a compliance checklist. It is the practice of asking, at every decision point, "Who does this affect, and how?" The following The following discussion is a relevant example of how principles should guide ethical reasoning in technical work.',
+  topic: 'How much autonomy should AI coding agents have, and who is responsible when an AI makes a harmful change?',
+  situation: [
     {
-      title: 'User Dignity',
-      body: 'Every user is a person made in the image of God. Systems should treat them as ends, not means. This means rejecting dark patterns, respecting privacy as a default, designing for accessibility, and never optimizing engagement at the cost of user wellbeing.',
+      title: 'What happened?',
+      body: 
+      [
+        	'Amazon Web Services (AWS) was developing Kiro, an AI-powered coding agent designed to assist developers.',
+          'During internal use, Kiro was given permission to perform operations on a production cloud environment.',
+          'The AI agent deleted and recreated parts of a production environment, causing a service outage.',
+          'Amazon later determined that the immediate cause was overly broad permissions granted to the AI agent by a human engineer, not malicious behavior by the AI itself.',
+          'The incident became a widely discussed example of the risks associated with autonomous AI agents in software engineering.'
+      ]
     },
     {
-      title: 'Transparency',
-      body: 'Users and stakeholders deserve to understand what a system does, what data it collects, and what its limitations are. Hiding complexity to obscure harm is a form of deception. I commit to building systems whose behavior can be understood and audited.',
+      title: 'What led up to the incident?',
+      body: 
+      [
+        'AI coding agents were becoming increasingly capable of performing tasks beyond code generation, including interacting with cloud infrastructure.',
+        'Engineers were experimenting with allowing AI agents to automate operational tasks.',
+        'The AI agent was granted permissions that allowed it to make significant changes to production resources.',
+        'Existing safeguards were insufficient to prevent destructive actions before they occurred.',
+      ]
     },
     {
-      title: 'Justice and Equity',
-      body: 'Technology can amplify existing inequities or help dismantle them. I must consider who is excluded by default—whose devices, languages, abilities, or circumstances are not accounted for. Justice in software means designing for the margins, not just the majority.',
+      title: 'Who was involved?',
+      body: 
+      [
+        'Amazon engineers',
+        'The AI coding agent',
+        'AWS customers',
+        'Amazon management',
+      ]
     },
     {
-      title: 'Accountability',
-      body: 'Systems should be auditable and their creators answerable. No algorithm should be a black box whose decisions cannot be explained or challenged. I commit to building systems where errors can be traced, harm can be remedied, and power can be checked.',
+      title: 'What was the response?',
+      body: 
+      [
+        'Amazon determined that the root cause was excessive permissions assigned by a human engineer.',
+        'AWS reviewed and strengthened permission controls for AI agents.',
+        'Greater emphasis was placed on human oversight before allowing AI systems to perform high-impact actions.',
+        'The incident reinforced the need for safeguards such as least-privilege access, approval workflows, monitoring and auditing of AI actions, and human review before executing destructive operations.',
+      ]
     },
   ],
-  examples: [
+  discussionPoints: [
     {
-      title: 'Rejecting a Manipulative Feature',
-      body: 'I was once asked to implement a notification pattern designed to create anxiety and drive compulsive engagement. I pushed back, explained the ethical concern to stakeholders, and proposed an alternative that informed users without manipulating them. The alternative was adopted.',
+      title: 'Initial Response',
+      body: 'When I first learned about this incident, my attention immediately focused on the AI itself. It seemed like another example of artificial intelligence making a costly mistake that resulted in a production outage. ' +
+        'However, as I learned more about what happened, I realized the ethical issue was much broader than whether AI is trustworthy. The outage was not caused by malicious or unpredictable behavior from the AI alone—' +
+        'it was the result of human decisions to grant the AI excessive permissions and allow it to perform high-impact actions without sufficient safeguards. This shifted my perspective from questioning the technology to questioning how responsibly it was being used.',
     },
     {
-      title: 'Advocating for Accessibility',
-      body: 'On a project with tight deadlines, accessibility testing was proposed to be cut. I advocated for keeping it, shared data on the impact of inaccessible design, and offered to do the testing myself to avoid schedule risk. The feature shipped accessible.',
+      title: 'Thinking on it further...',
+      body: 'The deeper ethical dilemma is one of accountability. When AI systems become more capable and autonomous, it can be tempting to view them as independent decision-makers. In reality, software engineers and organizations remain responsible for the systems they design, configure, and deploy. ' +
+        'This responsibility includes understanding the capabilities and limitations of AI tools, implementing appropriate security controls, reviewing AI-generated actions, and protecting users from unnecessary risk. Amazon\'s response reflected this principle by strengthening permission controls, ' +
+        'emphasizing human oversight, and requiring safeguards such as least-privilege access and approval workflows before allowing AI agents to make significant changes.',
     },
     {
-      title: 'Disclosing a Data Risk',
-      body: 'I discovered that a feature I was building could inadvertently expose sensitive user data under certain conditions. I immediately disclosed this to my team, paused the release, and worked with security to implement proper safeguards before shipping.',
+      title: 'Conclusion',
+      body: 'This case reinforced an important lesson for me as I prepare to enter the software engineering profession. I regularly use AI to brainstorm ideas, explain concepts, and accelerate development, but I also recognize that AI is a tool—not a substitute for professional judgment. ' +
+        'Ultimately, I am accountable for the quality, security, and reliability of the software I produce. Whether reviewing AI-generated code, validating recommendations, or making deployment decisions, I believe software engineers have an ethical responsibility to understand the tools they use and to ' +
+        'ensure that technology serves people safely and responsibly.',
     },
   ],
 };

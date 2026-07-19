@@ -29,19 +29,12 @@ export default function PrinciplesSection() {
                 <div className={s.iconWrap}>
                   <Icon size={28} />
                 </div>
-                <h3 className={s.cardTitle}>{principle.title}</h3>
-                <p className={s.cardReflection}>{principle.reflection}</p>
-                <div className={s.examples}>
-                  <p className={s.examplesLabel}>In Practice</p>
-                  <ul className={s.exampleList}>
-                    {principle.examples.map((example, j) => (
-                      <li key={j} className={s.exampleItem}>
-                        <span className={s.exampleDot} />
-                        <span className={s.exampleText}>{example}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className={s.cardHeader}>
+                  <h3 className={s.cardTitle}>{principle.title}</h3>
+                  <p className={s.cardLongTitle}>{principle.title_long}</p>
                 </div>
+                <p className={s.cardSubtitle}>{principle.subtitle}</p>
+                <p className={s.cardReflection}>{principle.reflection}</p>
               </article>
             </Reveal>
           );

@@ -218,12 +218,11 @@ function ResumeTab() {
         <a
           href={professionalContent.resume.pdfUrl}
           className="btn-primary"
-          onClick={(e) => {
-            if (professionalContent.resume.pdfUrl === '#') e.preventDefault();
-          }}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <FileText size={18} />
-          Download Resume
+          View Resume
         </a>
       </Card>
     </div>

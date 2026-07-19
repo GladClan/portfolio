@@ -8,6 +8,7 @@
   font-size: 1.125rem;
   color: var(--color-text-muted);
   line-height: 1.625;
+  margin-bottom: 0.75rem;
 }
 
 .sectionBlock {
