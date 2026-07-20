@@ -338,13 +338,13 @@ export const spiritualContent: SpiritualContent = {
     {
       year: '2021',
       title: 'Two-year LDS Mission',
-      description: "Being the first in my family to take this leap and server the Lord, I didn't know what to expect. But it surely wasn't the incredible feeling of teaching anotehr person something meaningful and new, sharing meaningful experiences, as well as deeply spiritual experience that changed my life forever. " + 
-        "But along with that, I aso learned the power of overcoming trials through serving others.",
+      description: "I didn't know what to expect since I was the first in my family to take this leap and serve the Lord. But it surely wasn't the incredible feeling of teaching another person something meaningful and new while sharing and creating personal experiences. Serving as a missionary was a deeply spiritual experience that changed my life forever. " + 
+        "Through it all, I learned the power of overcoming trials through serving others.",
     },
     {
       year: '2023',
       title: 'Coming home from mission service',
-      description: "Something that isn't widel recognized is the trial of not knowing whether you did your best. After coming home, I struggled to know whether I had done enough. But through heartfelt and sincere connection with God, I came to know that He was—and is—proud of me as His son.",
+      description: "Something that isn't widely recognized is the trial of not knowing whether you did your best. After coming home, I struggled to know whether I had done enough. But through heartfelt and sincere connection with God, I came to know that He was—and is—proud of me as His son.",
     },
     {
       year: '2024',
@@ -378,7 +378,7 @@ export const spiritualContent: SpiritualContent = {
         'Like the scripture in Ether, this is a reminder to me to give myself grace and not overtax myself. Reading this, I am reminded that God is a God of order, and not panicked. He trusts me to be able to do what He needs me to do.',
     },
     {
-      reference: 'Alma 18:24:40',
+      reference: 'Alma 18:24-40',
       hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/18?lang=eng&id=p24-p40#p24',
       text: 'Ammon teaching king Lamoni, relating the teachings to what he already knew',
       reflection:
@@ -466,7 +466,7 @@ export const faithContent: FaithContent = {
 
 export const ethicalContent: EthicalContent = {
   intro:
-    'Ethics in software engineering is not an add-on or a compliance checklist. It is the practice of asking, at every decision point, "Who does this affect, and how?" The following The following discussion is a relevant example of how principles should guide ethical reasoning in technical work.',
+    'Ethics in software engineering is not an add-on or a compliance checklist. It is the practice of asking, at every decision point, "Who does this affect, and how?" The following discussion is a relevant example of how principles should guide ethical reasoning in technical work.',
   topic: 'How much autonomy should AI coding agents have, and who is responsible when an AI makes a harmful change?',
   situation: [
     {

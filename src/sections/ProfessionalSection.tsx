@@ -166,7 +166,11 @@ function ProjectsTab() {
                         <AlertTriangle size={14} />
                         Challenges
                       </p>
-                      <p className={s.projectText}>{project.challenges}</p>
+                      <ul className={s.projectText}>
+                        {project.challenges.map((text, i) =>
+                          <li key={`challenge-${i}`}>{text}</li>
+                        )}
+                      </ul>
                     </div>
                     <div>
                       <p className={`${s.expandLabel} ${s.labelPrimary}`}>
