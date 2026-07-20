@@ -206,6 +206,7 @@ export const professionalContent: ProfessionalContent = {
       lessons:
         'This project reinforced the importance of designing software around the needs of its users. I learned that technical knowledge has the greatest impact when it is communicated clearly and used to help others make informed decisions.',
       githubUrl: 'https://github.com/GladClan/ScamShield',
+      demoUrl: 'https://online-scam-awareness-rilp.bolt.host/'
     },
     {
       id: 'dashboard',
