@@ -261,6 +261,7 @@ export const professionalContent: ProfessionalContent = {
         ],
       lessons:
         'This project taught me that software can be a powerful medium for storytelling and positive influence. I strengthened my testing, debugging, and teamwork skills while seeing firsthand how thoughtful design can create meaningful experiences for users.',
+      githubUrl: 'https://github.com/Unity-Group-4/Lamps-Hub',
     },
     {
       id: 'text-based-rpg',
