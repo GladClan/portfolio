@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Milestone, BookOpen, PenLine, TrendingUp, Quote, type LucideIcon, ExternalLink, Music2, Music4 } from 'lucide-react';
+import { Milestone, BookOpen, PenLine, Sprout, Quote, type LucideIcon, ExternalLink, Music2, Music4, ChevronDown } from 'lucide-react';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
@@ -15,7 +15,7 @@ const tabs: { id: Tab; label: string; icon: LucideIcon }[] = [
   { id: 'scriptures', label: 'Scriptures', icon: BookOpen },
   { id: 'talks', label: 'Talks', icon: PenLine },
   { id: 'music', label: 'Music', icon: Music4 },
-  // { id: 'growth', label: 'Growth', icon: TrendingUp },
+  { id: 'growth', label: 'Growth', icon: Sprout },
 ];
 
 export default function SpiritualSection() {
@@ -60,7 +60,7 @@ export default function SpiritualSection() {
             {activeTab === 'scriptures' && <ScripturesTab />}
             {activeTab === 'talks' && <TalksTab />}
             {activeTab === 'music' && <SongsTab />}
-            {/* {activeTab === 'growth' && <GrowthTab />} */}
+            {activeTab === 'growth' && <GrowthTab />}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -95,6 +95,7 @@ function MilestonesTab() {
 }
 
 function ScripturesTab() {
+  const [expanded, setExpanded] = useState<string | null>();
   return (
     <div className={s.scripturesGrid}>
       {spiritualContent.scriptures.map((scripture, i) => (
@@ -115,7 +116,30 @@ function ScripturesTab() {
           <blockquote className={s.scriptureText}>
             {scripture.text}
           </blockquote>
-          <p className={s.scriptureReflection}>{scripture.reflection}</p>
+          {/* <p className={s.scriptureReflection}>{scripture.reflection}</p> */}
+          <button
+            className={s.expandButton}
+            onClick={() => setExpanded(expanded === scripture.id ? null : scripture.id)}
+          >
+            {expanded === scripture.id ? 'Hide reflection' : 'Show reflection'}
+            <ChevronDown
+              size={16}
+              className={`${s.chevron} ${expanded === scripture.id ? s.chevronOpen : ''}`}
+            />
+          </button>
+          <AnimatePresence>
+            {expanded === scripture.id && 
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className={s.expandContent}
+              >
+              <p className={s.reflectionBody}>{scripture.reflection}</p>
+              </motion.div>
+            }
+          </AnimatePresence>
         </Card>
       ))}
     </div>
@@ -123,6 +147,7 @@ function ScripturesTab() {
 }
 
 function TalksTab() {
+  const [expanded, setExpanded] = useState<string | null>();
   return (
     <div className={s.reflectionsList}>
       {spiritualContent.talks.map((r, i) => (
@@ -140,7 +165,33 @@ function TalksTab() {
               <ExternalLink size={16} />
             </a>
           </div>
-          <p className={s.reflectionBody}>{r.reflection}</p>
+          <button
+            className={s.expandButton}
+            onClick={() => setExpanded(expanded === r.id ? null : r.id)}
+          >
+            {expanded === r.id ? 'Hide reflection' : 'Show reflection'}
+            <ChevronDown
+              size={16}
+              className={`${s.chevron} ${expanded === r.id ? s.chevronOpen : ''}`}
+            />
+          </button>
+          <AnimatePresence>
+            {expanded === r.id && 
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className={s.expandContent}
+              >
+                {
+                  r.reflection.map((P, i) => 
+                  <p className={s.reflectionBody} id={`paragraph-${i}`}>{P}</p>
+                  )
+                }
+              </motion.div>
+            }
+          </AnimatePresence>
         </Card>
       ))}
     </div>
@@ -148,6 +199,7 @@ function TalksTab() {
 }
 
 function SongsTab() {
+  const [expanded, setExpanded] = useState<string | null>();
   return (
     <div className={s.reflectionsList}>
       {spiritualContent.songs.map((r, i) => (
@@ -165,7 +217,31 @@ function SongsTab() {
               <ExternalLink size={16} />
             </a>
           </div>
-          <p className={s.reflectionBody}>{r.reflection}</p>
+          <button
+            className={s.expandButton}
+            onClick={() => setExpanded(expanded === r.id ? null : r.id)}
+          >
+            {expanded === r.id ? 'Hide reflection' : 'Show reflection'}
+            <ChevronDown
+              size={16}
+              className={`${s.chevron} ${expanded === r.id ? s.chevronOpen : ''}`}
+            />
+          </button>
+          <AnimatePresence>
+            {expanded === r.id && 
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className={s.expandContent}
+              >
+                {r.reflection.map((text, i) => 
+                  <p id={`paragraph-${i}`} className={s.reflectionBody}>{text}</p>
+                )}
+              </motion.div>
+            }
+          </AnimatePresence>
         </Card>
       ))}
     </div>
@@ -177,12 +253,14 @@ function GrowthTab() {
     <div className={s.growthWrap}>
       <Card hover={false}>
         <div className={s.growthHeader}>
-          <TrendingUp size={28} />
+          <Sprout size={28} />
           <h3 className={s.growthTitle}>Personal Growth</h3>
         </div>
-        <p className={s.growthText}>
-          {spiritualContent.personalGrowth}
-        </p>
+        {
+          spiritualContent.personalGrowth.map((paragraph, i) =>
+            <p id={`paragraph-${i}`} className={s.growthText}>{paragraph}</p>
+          )
+        }
       </Card>
     </div>
   );

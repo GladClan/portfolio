@@ -1,4 +1,4 @@
-import { Sparkles, ShieldCheck, HeartHandshake, type LucideIcon } from 'lucide-react';
+import { Shrub, Castle, HeartHandshake, type LucideIcon } from 'lucide-react';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
@@ -6,8 +6,8 @@ import { principles } from '../data/content';
 import s from './PrinciplesSection.module.css';
 
 const iconMap: Record<string, LucideIcon> = {
-  Sparkles,
-  ShieldCheck,
+  Shrub,
+  Castle,
   HeartHandshake,
 };
 
@@ -22,7 +22,7 @@ export default function PrinciplesSection() {
 
       <div className={s.grid}>
         {principles.map((principle, i) => {
-          const Icon = iconMap[principle.icon] ?? Sparkles;
+          const Icon = iconMap[principle.icon] ?? Shrub;
           return (
             <Reveal key={principle.id} delay={i * 0.15}>
               <article className={s.card}>

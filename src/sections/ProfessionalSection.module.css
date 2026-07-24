@@ -1,9 +1,32 @@
 .tabs {
+  position: relative;
   margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.tabs::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 90%;
+  height: 0.5rem;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    /* rgba(20, 184, 166, 0.15) 10%, */
+    var(--color-primary) 50%,
+    /* rgba(20, 184, 166, 0.15) 90%, */
+    transparent 100%
+  );
+  clip-path: polygon(0 50%, 8% 15%, 92% 15%, 100% 50%, 92% 85%, 8% 85%);
+  border-radius: 9999px;
+  pointer-events: none;
 }
 
 .tab {
@@ -85,6 +108,8 @@
 /* Projects */
 .projectsGrid {
   display: grid;
+  /* Comment this out and un-comment `height: 100%;` below to make all the cards the same size :) */
+  align-items: start;
   gap: 1.5rem;
 }
 
@@ -102,7 +127,8 @@
   box-shadow: var(--shadow-card);
   transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
   padding: 1.5rem;
-  height: 100%;
+  /* Un-comment this and comment out `align-items: start;` above to make all the cards the same size :) */
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }

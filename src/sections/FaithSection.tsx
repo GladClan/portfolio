@@ -34,6 +34,18 @@ export default function FaithSection() {
           );
         })}
       </div>
+      <div className={s.conclusionCard}>
+        {/* <div className={s.conclusionHeader}> */}
+          <h3 className={s.conclusionTitle}>Closing Reflection</h3>
+        {/* </div> */}
+        <div className={s.conclusionBody}>
+          {faithContent.conclusion.map((paragraph, i) => (
+            <p key={i} id={`paragraph-${i}`} className={s.conclusionParagraph}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
     </Section>
   );
 }

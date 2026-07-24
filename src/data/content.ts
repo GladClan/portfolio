@@ -1,12 +1,13 @@
-import type {
-  NavItem,
-  HomeContent,
-  AboutContent,
-  Principle,
-  ProfessionalContent,
-  SpiritualContent,
-  FaithContent,
-  EthicalContent,
+import {
+  type NavItem,
+  type HomeContent,
+  type AboutContent,
+  type Principle,
+  type ProfessionalContent,
+  type SpiritualContent,
+  type FaithContent,
+  type EthicalContent,
+  values,
 } from '../types/content';
 
 export const navItems: NavItem[] = [
@@ -15,13 +16,13 @@ export const navItems: NavItem[] = [
   { id: 'principles', label: 'Principles' },
   { id: 'professional', label: 'Professional' },
   { id: 'spiritual', label: 'Spiritual' },
-  // { id: 'faith', label: 'Faith & SE' },
+  { id: 'faith', label: 'Faith & SE' },
   { id: 'ethics', label: 'Ethics' },
 ];
 
 export const homeContent: HomeContent = {
   name: 'Isaac Glad',
-  title: 'Software Engineer & Faith-Driven Technologist',
+  title: 'Value-Driven Software Engineer',
   intro:
     'Hello there! I\'m a software engineer who builds software with intention—crafting systems that are not only robust and elegant, but ethically grounded. This portfolio traces my journey as a developer and as a person of faith, exploring where engineering excellence meets spiritual responsibility.\n\n'
       + 'In a world of vibe coders, I\'m a coder who actually knows what they\'re doing.',
@@ -132,7 +133,7 @@ export const principles: Principle[] = [
     title: 'Making a difference',
     title_long: 'Making a difference in the lives of those around me—my family, my friends, my community, and in my own life',
     subtitle: 'Viewing each project as an opportunity to serve others, solve meaningful problems, and leave a positive impact.',
-    icon: 'Sparkles',
+    icon: 'Shrub',
     reflection:
       "I believe that my talents and opportunities are gifts from God, meant to bless the lives of others. This principle reminds me that success is measured not only by what I accomplish, but by the positive influence I have on the people around me. Whether I'm developing software, helping someone learn, or contributing to a team, I want my work to improve lives, encourage growth, and create lasting value. Every project is an opportunity to serve with excellence and purpose.",
   },
@@ -141,7 +142,7 @@ export const principles: Principle[] = [
     title: 'Creativity and shared experiences',
     title_long: 'Encouraging creativity and sharing fun and meaningful stories and experiences',
     subtitle: 'Recognizing software as one of many creative outlets through which I can inspire, teach, and connect with others.',
-    icon: 'ShieldCheck',
+    icon: 'Castle',
     reflection:
       "God is the ultimate Creator, and I believe creativity is one of His gifts to His children. Throughout my life I've enjoyed creating through music, writing, art, games, and now software engineering. To me, programming is more than writing code—it's another way to create meaningful experiences, solve problems, and tell stories. I also believe that fun and storytelling can be powerful tools for building relationships, teaching important ideas, and sharing truths in ways that resonate with others. Creativity becomes most meaningful when it brings people together and points them toward something greater than ourselves.",
   },
@@ -187,8 +188,10 @@ export const professionalContent: ProfessionalContent = {
           'Designing a scalable architecture that could support future expansion'
         ],
       lessons:
-        'This project taught me how much successful software engineering depends on understanding the problem before writing code. I gained experience in system architecture, API design, database analysis, and technical documentation, while also learning the importance of security, iterative development, and clear communication with stakeholders.'
-    },
+        'This project taught me how much successful software engineering depends on understanding the problem before writing code. I gained experience in system architecture, API design, database analysis, and technical documentation, while also learning the importance of security, iterative development, and clear communication with stakeholders.',
+      growth: 'Not only did this project strengthen my abilities in backend development, database analysis, API design, system architecture, and secure software development, but it was reinforced by my desire to make a difference by creating software that solves meaningful problems. Rather than simply connecting an AI to a database, I focused on creating a tool that could help people make better business decisions while respecting privacy and security. It also reminded me that good stewardship includes building systems that are trustworthy and carefully designed.',
+      values: [values.difference],
+      },
     {
       id: 'scam-awareness',
       title: 'Scam Awareness Website',
@@ -205,8 +208,10 @@ export const professionalContent: ProfessionalContent = {
         ],
       lessons:
         'This project reinforced the importance of designing software around the needs of its users. I learned that technical knowledge has the greatest impact when it is communicated clearly and used to help others make informed decisions.',
+      growth: 'Developing responsive web applications and communicating technical concepts to a non-technical audience were not the only skills I developed in this project. This project directly reflects my desire to make a difference. By helping people recognize online scams, I hoped to reduce harm and empower users to make informed decisions. It reminded me that software can be used to educate, protect, and serve others.',
       githubUrl: 'https://github.com/GladClan/ScamShield',
-      demoUrl: 'https://online-scam-awareness-rilp.bolt.host/'
+      demoUrl: 'https://online-scam-awareness-rilp.bolt.host/',
+      values: [values.difference, values.creativity],
     },
     {
       id: 'dashboard',
@@ -225,6 +230,8 @@ export const professionalContent: ProfessionalContent = {
         ],
       lessons:
         'Leading this project showed me that successful software development depends just as much on communication and organization as it does on technical ability. I developed greater confidence in leading teams, facilitating collaboration, and adapting to changing project needs.',
+      growth: 'This project emphasized the importance of connection. I learned that successful software projects depend on listening, encouraging teammates, and helping everyone contribute their strengths. Building relationships became just as important as completing technical tasks.',
+      values: [values.connection, values.difference]
     },
     {
       id: 'github-classrooms',
@@ -243,6 +250,8 @@ export const professionalContent: ProfessionalContent = {
         ],
       lessons:
         'This project strengthened my understanding of API design and collaborative software development. I also gained valuable experience conducting peer reviews, presenting technical information, and adapting my communication style for different audiences.',
+      growth: 'This project strengthened both connection and making a difference. Automating repetitive tasks wasn\'t the goal; rather, the goal of this project was to create more time for instructors and students to focus on learning. Working with my teammates reminded me that software engineering is fundamentally a collaborative profession.',
+      values: [values.connection, values.difference]
     },
     {
       id: 'lamps-game',
@@ -261,7 +270,9 @@ export const professionalContent: ProfessionalContent = {
         ],
       lessons:
         'This project taught me that software can be a powerful medium for storytelling and positive influence. I strengthened my testing, debugging, and teamwork skills while seeing firsthand how thoughtful design can create meaningful experiences for users.',
+      growth: 'This project naturally reflected all three of my guiding principles. The game\'s message centered on helping others, while the collaborative development process strengthened relationships and the creative aspects of the project reminded me that meaningful stories can inspire and encourage people.',
       githubUrl: 'https://github.com/Unity-Group-4/Lamps-Hub',
+      values: [values.connection, values.difference, values.creativity]
     },
     {
       id: 'text-based-rpg',
@@ -280,7 +291,9 @@ export const professionalContent: ProfessionalContent = {
         ],
       lessons:
         'This project has strengthened my object-oriented design skills and reinforced the value of planning before implementation. It has also reminded me that creativity and software engineering go hand in hand, as building games requires both technical problem-solving and thoughtful user experience design.',
+      growth: 'This was my first major project, and since it is ongoing, it is still an incredible exercise to me of object-oriented programming, software architecture, and full-stack development. It has challenged me to think about maintainability, game mechanics, and user experience from the beginning of the design process. But more than that, this project reflects my love of creativity and shared experiences. I\'ve come to see software as another creative medium through which stories can be told and meaningful experiences can be shared. Building something enjoyable for others has reminded me that creativity can uplift and connect people.',
       githubUrl: 'https://github.com/GladClan/text-dungeon-crawler',
+      values: [values.creativity]
       },
   ],
   certifications: [
@@ -344,17 +357,18 @@ export const spiritualContent: SpiritualContent = {
     {
       year: '2023',
       title: 'Coming home from mission service',
-      description: "Something that isn't widely recognized is the trial of not knowing whether you did your best. After coming home, I struggled to know whether I had done enough. But through heartfelt and sincere connection with God, I came to know that He was—and is—proud of me as His son.",
+      description: "Something I did not expect was the trial of not knowing whether I did my best. After coming home, I struggled to know whether I had done enough. But through heartfelt and sincere connection with God, I came to know that He was—and is—proud of me as His son.",
     },
     {
       year: '2024',
       title: 'Courting my earthly angel',
-      description: "It's cheesy, I know, but dating and marriage have taught me so much about God's mercy and love. There is no way I could have gotten together with my wife if it had not been for divine intervention. And I testify unashamedly that she is my earthly angel. " +
+      description: "It's cheesy, I know, but dating and marriage have taught me so much about God's mercy and love. There is no way I could have come together with my wife if it had not been for divine intervention. And I testify unashamedly that she is my earthly angel.\n" +
         "She is there with me in good times and bad, and she helps me feel my Saviour's love when all I want to do is curl up in a ball and block out the world. Through her, I've learned that God speaks through other people, and works miracles through those close to us.",
     },
   ],
   scriptures: [
     {
+      id: 'ether-12',
       reference: 'Ether 12:27',
       hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12?lang=eng&id=p27#p27',
       text: 'And if men come unto me I will show unto them their weakness. I give unto men weakness that they may be humble; and my grace is sufficient for all men that humble themselves before me; for if they humble themselves before me, and have faith in me, then will I make weak things become strong unto them.',
@@ -363,6 +377,7 @@ export const spiritualContent: SpiritualContent = {
           'Also, during my experience as a missionary, I realized that there is a double meaning here — the closer I get to Jesus, the more imperfect I will see myself. Realizing that helped me feel confident again when I had felt overburdened by my own imperfection.',
     },
     {
+      id: 'mosiah-2',
       reference: 'Mosiah 2:17',
       hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p17#p17',
       text: 'And behold, I tell you these things that ye may learn wisdom; that ye may learn that when ye are in the service of your fellow beings ye are only in the service of your God.',
@@ -371,13 +386,15 @@ export const spiritualContent: SpiritualContent = {
           "And on the other side of the coin, it is a reminder and warning to not waste away the time I've been given on this earth in selfish hedonism.",
     },
     {
+      id: 'mosiah-4',
       reference: 'Mosiah 4:27',
       hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/4?lang=eng&id=p27#p27',
       text: 'And see that all these things are done in wisdom and order; for it is not requisite that a man should run faster than he has strength. And again, it is expedient that he should be diligent, that thereby he might win the prize; therefore, all things must be done in order.',
       reflection:
-        'Like the scripture in Ether, this is a reminder to me to give myself grace and not overtax myself. Reading this, I am reminded that God is a God of order, and not panicked. He trusts me to be able to do what He needs me to do.',
+        'Like the scripture in Ether, this is a reminder to me to give myself grace and not overtax myself. Reading this, I am reminded that God is a God of order, and not panic. He trusts me to be able to do what He needs me to do.',
     },
     {
+      id: 'alma-18',
       reference: 'Alma 18:24-40',
       hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/18?lang=eng&id=p24-p40#p24',
       text: 'Ammon teaching king Lamoni, relating the teachings to what he already knew',
@@ -385,83 +402,139 @@ export const spiritualContent: SpiritualContent = {
         "This story came to mind as a representative for my value of creativity and sharing stories and experiences. In this chapter, Ammon teaches king Lamoni about God, but in ways that king Lamoni is familiar with and relates to. " +
           "Ammon creates common ground between them and builds up the king's knowledge and understanding from where it is rather than being stubborn or inflexible in his explanation of the Plan and the Saviour's gospel.",
     },
-  ],
-  songs: [
     {
-      title: 'Look Unto Christ',
-      link: 'https://youtu.be/UdjWhPoFMKE?t=130',
-      reflection: 'I have a strong emotional connection to this song from the time I had the privilege to be a part of a choir performing it. It offers steady encouragements: "doubt not," "fear not," "heed not," "press on." ' +
-        'The song seems to represent life, going through tribultion, doubts, conspiring foes, and mocking voices, weakness and mourning. Through all of the difficulties, it encourages me to look to the Saviour, my "Lord and Friend."'
-    },
-    {
-      title: 'Living Water by James Thorup',
-      link: 'https://www.churchofjesuschrist.org/media/video/2024-03-0060-living-water-official-track-video-feat-james-thorup-1080p-eng-mp4',
-      reflection: 'Something that I\'ve realized I love to hear in song and story is imagery. My favorite songs evoke colors and scenes in the mind that enhance the impact of the song, bringing it to life internally. Parables are an excellent example of this - ' +
-        'the Saviour teaching through situations and experiences that are familiar to the audience. The song Living Water is a splended example of this as well. It relates my personal spiritaul health to a garden that I am tending to. The plants and flowers in it needing attention and care, ' +
-        'and most importantly, water. This song is a vivid reminder to me of the importance of the Saviours "living water" and the healing He brings. Without the Saviour in my life, or when I turn away, it\'s like turning a flower away from the light of the sun. ' +
-        'As I turn back to Him, He reminds me of the healing power of His light, breathing life back into the dying flower that is my soul.'
-    },
-    {
-      title: 'Behold the Wounds in Jesus\' Hands',
-      link: 'https://www.churchofjesuschrist.org/media/music/songs/2025-10-behold-the-wounds-in-jesus-hands',
-      reflection: 'I have had some growing experiences in my life that have taught me truly that the Saviour is real and has a physical presence. Singing this song is singing my testimony that Jesus did live. He suffered trials, temptation, and pain - and he did it so that He could heal and comfort me. ' +
-        'Even more than that, He stands beside me, even when I feel so alone, like He should be upset or resentful - He isn\'t. He\'s right there beside me with a knowing smile and a hand on my shoulder, encouraging me to rise up and  get to work.'
-    },
+      id: 'alma-7',
+      reference: 'Alma 7:11-12',
+      hyperlink: 'https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/7?lang=eng&id=11-12#11',
+      text: 'And he shall go forth, suffering pains and afflictions and temptations of every kind; and this that the word might be fulfilled which saith he will take upon him the pains and the sicknesses of his people.\n\n' +
+        'And he will take upon him death, that he may loose the bands of death which bind his people; and he will take upon him their infirmities, that his bowels may be filled with mercy, according to the flesh, that he may know according to the flesh how to succor his people according to their infirmities.',
+      reflection: 'These verses are so special to me. Something that I find especially significant is that it doesn\'t just speak of Jesus taking my sins, but also my pains and afflictions and anywhere that I am not firm. I love that because it really shows that Jesus knows me perfectly, and that as I strive to know Him, He can also better me and heal me and even teach me about myself.'
+    }
   ],
   talks: [
     {
+      id: 'comparisons',
       title: '"Wrestling with Comparisons" by J.B. Haws',
       link: 'https://speeches.byu.edu/talks/j-b-haws/wrestling-with-comparisons/',
-      reflection: ''
+      reflection: [
+        'I will forever have fond memories and a strong emotional connection to this talk. J.B. Haws speaks with passion about comparison, the thief of all joy, relating it to breathing. "It can almost feel ­reflexive—almost natural."',
+        'One of Haws\' central messages is that comparison naturally turns our attention inward. We become preoccupied with questions like "Am I doing better than everyone else?" instead of "How can I bless someone today?" He argues that Christ\'s solution is to "forget yourself and start concentrating on others."',
+        'In connection with Software engineering, this talk reminds me that success is not measured by outperforming others and more by how well I use my abilities to serve. As a software engineer, I hope to build tools that improve people\'s lives rather than simply demonstrate technical ability.'
+      ]
     },
     {
+      id: 'things',
       title: '"Things As They really Are" by Elder David A. Bednar',
       link: 'https://www.churchofjesuschrist.org/study/ensign/2010/06/things-as-they-really-are',
-      reflection: ''
+      reflection: [
+        'This is a hard talk to listen to, I\'m sure, for gamers of this age (like myself). This message teaches that technology should always be a tool for accomplishing righteous purposes, rather than becoming the focus itself.',
+        'Elder Bednar affirms that technology should be a tool for strengthening meaningful relationships and blessing people\'s lives. Personally, when I listened to this talk, it gives me hope to create technology that solves real problems and keeps people and relationships as the focus, rather than ease and pleasure.'
+      ]
     },
     {
+      id: 'things-2',
       title: '"Things As They really Are 2.0" also by Elder David A. Bednar',
       link: 'https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-young-adults/2024/11/13bednar',
-      reflection: ''
+      reflection: [
+        'AI is a big part of this world — I used several different generative AI\'s to create the structure and flow of this portfolio. AI really is an incredible tool.',
+        'Just as technology as a whole is a tool to strengthen relationships wit hGod and others, AI must fall under those same principles.',
+        'As AI becomes an increasingly important part of software engineering, I want to use it to enhance learning, creativity, and service while remembering that ethical judgment, agency, and spiritual growth remain uniquely human responsibilities.'
+      ]
     },
     {
+      id: 'forgive',
       title: '"Faith to Forgive Grievous Harms: Accepting the Atonement as Restitution" by James R. Rasband',
       link: 'https://speeches.byu.edu/talks/james-r-rasband/faith-to-forgive-grievous-harms-atonement-restitution/',
-      reflection: 'My first experience with this BYU devotional was during my time as a missionary. The principles of this talk are truly essential, and it has helped me come to a better understanding of forgiveness and restitution. This, paired with other talks, has taught me essential lessons about forgiveness and restitution, ' +
-        'as well as the power of grace - toward myself and toward others. We all want grace and forgiveness, and it is so important (even a divine command) to extend that grace and pardon to others when they make mistakes.'
+      reflection: [
+        'This message deepened my understanding of Christ\'s atonement. James Rasband explains that Christ not only forgives our sins, but also provides complete healing and restitution for the wrongs we experience.',
+      'Forgiveness is best offered rooted in faith that even if I can\'t wholly restore or compensate for my mistakes and errors, the Saviour makes all the difference. Because of His mercy, I can seek for and extend grace trusting that I\'ll be okay, that unfairness will one day be overcome.',
+      'Even the small portion of life that I\'ve experienced, I have learned how important it is to strengthen trust, strengthen relationships, and improve the lives of others. And I have surely learned that it is impossible to meaningfully progress while holding on to grudges.',
+      'I think the most meaningful lesson that I learned from this talk is really what it means to extend grace to others. Considering how desperately I want and need grace, Rasband invites us to then transpose that onto others, imagining how they must desire the same grace that I do. In doing so, I find it so much easier t osee others as children of a Heavenly Father, just like me.'
+      ]
     },
     {
+      id: 'responsible',
       title: '"Be 100 Percent Responsible" by Elder Lynn G. Robbins',
       link: 'https://speeches.byu.edu/talks/lynn-g-robbins/be-100-percent-responsible/',
-      reflection: ''
+      reflection: [
+        'Elder Lynn G. Robbins taught that agency and responsibility cannot be separated. His message reminds me that growth begins when I stop making excuses and focus on what I can control.',
+        'This message taught me to focus on meaningful actions that lead to a solution rather than placing blame. As a result, I find myself much more aware of the worth of personal ownership and perseverance, especially in the face of mistakes and trials. I let these ideas work in me, encouraging me to accept responsibility for my work, continue learning from mistakes, and use that accountability to better serve others.'
+      ]
     },
   ],
-	// - 
-  personalGrowth:
-    '',
+  songs: [
+    {
+      id: 'look',
+      title: 'Look Unto Christ',
+      link: 'https://youtu.be/UdjWhPoFMKE?t=130',
+      reflection: [
+        'I have a strong emotional connection to this song from the time I had the privilege to be a part of a choir performing it. It offers steady encouragements: "doubt not," "fear not," "heed not," "press on."',
+        'The song seems to represent life, going through tribultion, doubts, conspiring foes, and mocking voices, weakness and mourning. Through all of the difficulties, it encourages me to look to the Saviour, my "Lord and Friend."'
+      ]
+    },
+    {
+      id: 'water',
+      title: 'Living Water by James Thorup',
+      link: 'https://www.churchofjesuschrist.org/media/video/2024-03-0060-living-water-official-track-video-feat-james-thorup-1080p-eng-mp4',
+      reflection: [
+        'Something that I\'ve realized I love to hear in song and story is imagery. My favorite songs evoke colors and scenes in the mind that enhance the impact of the song, bringing it to life internally. Parables are an excellent example of this - the Saviour teaching through situations and experiences that are familiar to the audience.',
+        'The song Living Water is a splended example of this as well. It relates my personal spiritaul health to a garden that I am tending to. The plants and flowers in it needing attention and care, and most importantly, water.',
+        'This song is a vivid reminder to me of the importance of the Saviours "living water" and the healing He brings. Without the Saviour in my life, or when I turn away, it\'s like turning a flower away from the light of the sun. As I turn back to Him, He reminds me of the healing power of His light, breathing life back into the dying flower that is my soul.'
+      ]
+    },
+    {
+      id: 'wounds',
+      title: 'Behold the Wounds in Jesus\' Hands',
+      link: 'https://www.churchofjesuschrist.org/media/music/songs/2025-10-behold-the-wounds-in-jesus-hands',
+      reflection: [
+        'I have had some growing experiences in my life that have taught me truly that the Saviour is real and has a physical presence. Singing this song is singing my testimony that Jesus did live. He suffered trials, temptation, and pain - and he did it so that He could heal and comfort me.',
+        'Even more than that, He stands beside me, even when I feel so alone, like He should be upset or resentful - He isn\'t. He\'s right there beside me with a knowing smile and a hand on my shoulder, encouraging me to rise up and  get to work.'
+      ]
+    },
+    {
+      id: 'stranger',
+      title: 'No Stranger',
+      link: 'https://www.churchofjesuschrist.org/media/music/songs/no-stranger?lang=eng',
+      reflection: [
+        'I\'m sure anyone could relate when I say I\'ve had moments when I\'ve felt alone or overwhelmed by life, or when I felt that I made a mistake that leaves me feeling empty and meaningless.',
+        'In many of those moments, I took time to listen to this song and be reminded that the Lord knows those feelings — Jesus is intimately aware of our low moments and how hard it can feel to repeatedly make mistakes. That\'s one of the reasons He came down, after all. So when things feel out of control, then He can step in and remind us that He is Master over wind and tempest.',
+      ]
+    }
+  ],
+  personalGrowth: [
+    "As I reflect on these projects, I see more than a collection of technical accomplishments. Each experience has helped me grow not only as a software engineer but also as a disciple of Jesus Christ.",
+    "Each project that I've chosen to work on relates to my principles — my personal values. To me, technical ability and spiritual growth are not separate pursuits. As I strive to strengthen my relationship with God, serve others, and cultivate creativity, those same principles influence how I design software, collaborate with others, and approach every new challenge.",
+    "I also strive to use these principles to drive me in every other aspect of life as well, connecting them to how I choose to spend my time and what I devote my energy to.",
+  ],
 };
 
 export const faithContent: FaithContent = {
   intro:
-    'Software engineering and Christian faith are not separate domains. They ask overlapping questions: What does it mean to create well? Who do we serve? How do we handle power? The following reflections explore where these two worlds meet in my life.',
+    'My faith and my work are not separate parts of my life. The principles that guide my relationship with God also influence how I design software, work with others, solve problems, and face decisions. As I continue developing as a software engineer, I hope my work reflects the same values that guide me everywhere else in life.',
   topics: [
     {
-      title: 'Creation and Creativity',
+      title: 'Faith Inspires Connection',
       body: 'Genesis opens with God creating—bringing order from chaos, calling things into being, and declaring them good. As an engineer, I participate in this creative impulse. Every system I design, every interface I build, is an act of sub-creation. This does not mean all my code is good; it means the act of creating itself reflects the image of God in me. When I build something useful, beautiful, and true, I am echoing the first chapter of Scripture.',
     },
     {
-      title: 'Power and Responsibility',
-      body: 'Software concentrates power. A single algorithm can shape what millions of people see, feel, and believe. Jesus consistently modeled the use of power for the flourishing of others, not for self-advancement. As a technologist, I must ask: Does the system I am building concentrate power in ways that could harm vulnerable people? Am I using my technical influence to serve or to control? Power is a stewardship, not a right.',
+      title: 'Faith Gives My Work Purpose',
+      body: 'Software is one of the most powerful tools available for improving lives. Whether I am automating repetitive work, educating users, or creating meaningful experiences, I want my projects to solve real problems and leave a positive impact on the people who use them.',
     },
     {
-      title: 'Truth and Transparency',
-      body: 'Scripture consistently aligns God with truth and light, and evil with deception and darkness. In software, deception is often subtle: dark patterns that manipulate users, metrics that mislead stakeholders, or hidden tracking that violates privacy. As a Christian engineer, I am called to build systems that are transparent about what they do, honest about their limitations, and respectful of the user\'s right to understand.',
+      title: 'Faith Encourages Creativity',
+      body: 'I believe creativity is one of God\'s gifts. Programming allows me to combine creativity with logic to build something that did not exist before. Whether developing games, designing software architecture, or creating educational resources, I enjoy using creativity to serve others and communicate meaningful ideas.',
     },
     {
-      title: 'Community and Collaboration',
-      body: 'The Trinity models community within unity—distinct persons working in perfect harmony. Software engineering is inherently collaborative: code reviews, pair programming, shared ownership. When I collaborate well—sharing credit, receiving correction, supporting teammates—I reflect the relational nature of the God whose image I bear. Isolation in engineering is not just inefficient; it is spiritually impoverished.',
+      title: 'Ethical Responsibility',
+      body: 'My faith also influences how I approach ethical decisions. Integrity, honesty, accountability, and stewardship are not simply professional expectations — they are spiritual commitments. Whether reviewing AI-generated code, protecting sensitive data, or communicating honestly about mistakes, I believe software engineers have a responsibility to use technology wisely and in ways that benefit others.',
     },
   ],
+  conclusion: [
+    'As technology continues to evolve, I hope to continue growing not only as a software engineer but also as a disciple of Jesus Christ.',
+    'My faith reminds me that every line of code ultimately serves people, not computers. It encourages me to build strong relationships, approach challenges with integrity, and use my talents to make a positive difference. Software engineering is much more than writing code — it is the opportunity to create tools, solve problems, and improve people\'s lives.',
+    'Technical skills will continue to change throughout my career, but the principles of faith, service, integrity, and creativity provide a lasting foundation for how I hope to build software and serve others. Whether collaborating with a team, designing a secure system, or creating an engaging experience, I strive to view software engineering as both a technical discipline and an act of service.',
+    'Creativity, stewardship, and compassion are just as important to me as technical excellence, and I hope those principles will continue to guide my work throughout my career.',
+  ]
 };
 
 export const ethicalContent: EthicalContent = {
@@ -511,9 +584,13 @@ export const ethicalContent: EthicalContent = {
       ]
     },
   ],
+  // Ethical Principles (i.e. honesty, fairness, responsibility, etc.)
+  ethicalPrinciples: [],
+  // Suggest a different way to handle it that sticks with these principles
+  // Explain why the alternative would be better, thinking about everyone involved
   discussionPoints: [
     {
-      title: 'Initial Response',
+      title: 'My Initial Response',
       body: 'When I first learned about this incident, my attention immediately focused on the AI itself. It seemed like another example of artificial intelligence making a costly mistake that resulted in a production outage. ' +
         'However, as I learned more about what happened, I realized the ethical issue was much broader than whether AI is trustworthy. The outage was not caused by malicious or unpredictable behavior from the AI alone—' +
         'it was the result of human decisions to grant the AI excessive permissions and allow it to perform high-impact actions without sufficient safeguards. This shifted my perspective from questioning the technology to questioning how responsibly it was being used.',

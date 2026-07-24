@@ -41,6 +41,12 @@ export interface SkillCategory {
   skills: string[];
 }
 
+export enum values {
+  connection = "Connection",
+  difference = "Making a Difference",
+  creativity = "Creativity and Shared Experience"
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -49,8 +55,10 @@ export interface Project {
   technologies: string[];
   challenges: string[];
   lessons: string;
+  growth: string;
   githubUrl?: string;
   demoUrl?: string;
+  values: values[];
 }
 
 export interface Certification {
@@ -79,6 +87,7 @@ export interface SpiritualMilestone {
 }
 
 export interface Scripture {
+  id: string;
   reference: string;
   hyperlink: string;
   text: string;
@@ -86,15 +95,17 @@ export interface Scripture {
 }
 
 export interface Song {
+  id: string;
   title: string;
   link: string;
-  reflection: string;
+  reflection: string[];
 }
 
 export interface Talk {
+  id: string;
   title: string;
   link: string;
-  reflection: string;
+  reflection: string[];
 }
 
 export interface SpiritualContent {
@@ -102,7 +113,7 @@ export interface SpiritualContent {
   scriptures: Scripture[];
   songs: Song[];
   talks: Talk[];
-  personalGrowth: string;
+  personalGrowth: string[];
 }
 
 export interface FaithTopic {
@@ -113,11 +124,13 @@ export interface FaithTopic {
 export interface FaithContent {
   intro: string;
   topics: FaithTopic[];
+  conclusion: string[];
 }
 
 export interface EthicalContent {
   intro: string;
   topic: string;
   situation: { title: string; body: string[] }[];
+  ethicalPrinciples: string[];
   discussionPoints: { title: string; body: string }[];
 }

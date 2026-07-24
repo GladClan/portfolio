@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code2, FolderOpen, Award, FileText, ChevronDown, ExternalLink, Github, Lightbulb, AlertTriangle, type LucideIcon } from 'lucide-react';
+import { Code2, FolderOpen, Award, FileText, ChevronDown, ExternalLink, Github, Lightbulb, AlertTriangle, type LucideIcon, Sprout } from 'lucide-react';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
@@ -122,6 +122,7 @@ function ProjectsTab() {
               </div>
             </div>
 
+            {/* Technology tags */}
             <div className={s.techRow}>
               {project.technologies.map((tech) => (
                 <Badge key={tech} variant="secondary">
@@ -151,6 +152,7 @@ function ProjectsTab() {
               />
             </button>
 
+            {/* "Show More" */}
             <AnimatePresence>
               {expanded === project.id && (
                 <motion.div
@@ -161,6 +163,7 @@ function ProjectsTab() {
                   className={s.expandContent}
                 >
                   <div className={s.expandInner}>
+                    {/* Challenges section */}
                     <div>
                       <p className={`${s.expandLabel} ${s.labelWarning}`}>
                         <AlertTriangle size={14} />
@@ -172,12 +175,29 @@ function ProjectsTab() {
                         )}
                       </ul>
                     </div>
+                    {/* Lessons learned section */}
                     <div>
                       <p className={`${s.expandLabel} ${s.labelPrimary}`}>
                         <Lightbulb size={14} />
                         Lessons Learned
                       </p>
                       <p className={s.projectText}>{project.lessons}</p>
+                    </div>
+                    {/* Spiritual growth section */}
+                    <div>
+                      <p className={`${s.expandLabel} ${s.labelPrimary}`}>
+                        <Sprout size={14} />
+                        Growth
+                      </p>
+                      <p className={s.projectText}>{project.growth}</p>
+                    </div>
+                    {/* Values tags */}
+                    <div className={s.techRow}>
+                      {project.values.map((val) => (
+                        <Badge key={val} variant="primary">
+                          {val}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 </motion.div>
