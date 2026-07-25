@@ -5,9 +5,9 @@ import Reveal from '../components/Reveal';
 import Card from '../components/Card';
 import { ethicalContent } from '../data/content';
 import s from './EthicsSection.module.css';
-import { body } from 'framer-motion/client';
+// import { body } from 'framer-motion/client';
 
-const principleIcons: LucideIcon[] = [Shield, Eye, Scale, ClipboardCheck];
+const principleIcons: LucideIcon[] = [Shield, Eye, ClipboardCheck, Scale];
 
 export default function EthicsSection() {
   return (
@@ -18,20 +18,21 @@ export default function EthicsSection() {
         subtitle={ethicalContent.intro}
       />
 
-      <div className={s.principlesGrid}>
+      {/* Informational section */}
+      <div className={s.blocksGrid}>
         {ethicalContent.situation.map((p, i) => {
           const Icon = principleIcons[i % principleIcons.length];
           return (
             <Card key={i} delay={i * 0.1}>
-              <div className={s.principleCard}>
-                <div className={s.principleIconWrap}>
+              <div className={s.blockCard}>
+                <div className={s.blockIconWrap}>
                   <Icon size={24} />
                 </div>
                 <div>
-                  <h3 className={s.principleTitle}>{p.title}</h3>
+                  <h3 className={s.blockTitle}>{p.title}</h3>
                   <ul>
                     {p.body.map((item, i) => 
-                      <li key={i} className={s.principleBody}>{item}</li>
+                      <li key={i} className={s.blockBody}>{item}</li>
                     )}
                   </ul>
                 </div>
@@ -41,23 +42,91 @@ export default function EthicsSection() {
         })}
       </div>
 
-      <div className={s.examplesBlock}>
+      {/* Discussion section */}
+      <div className={s.startBlock}>
         <Reveal>
-          <div className={s.examplesHeading}>
+          <div className={s.discussionHeading}>
             <MessagesSquare size={48} />
-            <h3 className={s.examplesTitle}>Discussion: {ethicalContent.topic}</h3>
+            <h3 className={s.discussionTitle}>Discussion: {ethicalContent.topic}</h3>
           </div>
         </Reveal>
-        <div className={s.examplesGrid}>
+        <div className={s.contentGrid}>
           {ethicalContent.discussionPoints.map((dp, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <article className={s.exampleCard}>
+              <article className={s.surfaceCard}>
                 <h4 className={s.exampleTitle}>{dp.title}</h4>
                 <p className={s.exampleBody}>{dp.body}</p>
+                {dp.references.length > 0 && (
+                  <div className={s.referencesBlock}>
+                    <p className={s.referencesLabel}>References</p>
+                    <ul className={s.referencesList}>
+                      {dp.references.map((ref, i) => (
+                        <li key={ref.link} className={s.referencesItem}>
+                          <a
+                            id={`reference-${i}`}
+                            className={s.referenceLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            href={ref.link}
+                          >
+                            {ref.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </article>
             </Reveal>
           ))}
         </div>
+      </div>
+
+      {/* Principles section */}
+      <div className={s.startBlock}>
+        <Reveal>
+          <div className={s.discussionHeading}>
+            <h3 className={s.discussionTitle}>What is the principle here?</h3>
+          </div>
+        </Reveal>
+
+        <div className={s.contentGrid}>
+          {ethicalContent.principles.map((principle, i) => (
+            <Reveal key={principle.handle} delay={i * 0.1}>
+              <article className={s.surfaceCard}>
+                <div className={s.principleIndex}>{String(i + 1).padStart(2, '0')}</div>
+                <h4 className={s.blockTitle}>{principle.handle}</h4>
+                <p className={s.principleQuestion}>{principle.question}</p>
+                <p className={s.exampleBody}>{principle.listOpener}</p>
+                <ul className={s.principleList}>
+                  {principle.listItems.map((item) => (
+                    <li key={item} className={s.principleListItem}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className={s.exampleBody}>{principle.close}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {/* Alternative solution section */}
+      <div className={s.startBlock}>
+        <Reveal>
+          <div className={s.discussionHeading}>
+            <h3 className={s.discussionTitle}>What else could have been done?</h3>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <article className={s.surfaceCard}>
+            {ethicalContent.alternateSuggestion.map((para, i) => (
+                  <p key={`paragraph-${i}`} className={s.discussionBody}>{para}</p>
+                ))}
+          </article>
+        </Reveal>
       </div>
     </Section>
   );

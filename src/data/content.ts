@@ -584,28 +584,100 @@ export const ethicalContent: EthicalContent = {
       ]
     },
   ],
-  // Ethical Principles (i.e. honesty, fairness, responsibility, etc.)
-  ethicalPrinciples: [],
-  // Suggest a different way to handle it that sticks with these principles
-  // Explain why the alternative would be better, thinking about everyone involved
   discussionPoints: [
     {
       title: 'My Initial Response',
       body: 'When I first learned about this incident, my attention immediately focused on the AI itself. It seemed like another example of artificial intelligence making a costly mistake that resulted in a production outage. ' +
         'However, as I learned more about what happened, I realized the ethical issue was much broader than whether AI is trustworthy. The outage was not caused by malicious or unpredictable behavior from the AI alone—' +
         'it was the result of human decisions to grant the AI excessive permissions and allow it to perform high-impact actions without sufficient safeguards. This shifted my perspective from questioning the technology to questioning how responsibly it was being used.',
+      references: [
+        {
+          title: 'Correcting the Financial Times report about AWS, Kiro, and AI',
+          link: 'https://www.aboutamazon.com/news/aws/aws-service-outage-ai-bot-kiro',
+        },
+        {
+          title: 'AWS Outage Was ‘Not AI’ Caused Via Kiro Coding Tool, Amazon Confirms',
+          link: 'https://www.crn.com/news/cloud/2026/aws-outage-was-not-ai-caused-via-kiro-coding-tool-amazon-confirms',
+        }
+      ],
     },
     {
       title: 'Thinking on it further...',
       body: 'The deeper ethical dilemma is one of accountability. When AI systems become more capable and autonomous, it can be tempting to view them as independent decision-makers. In reality, software engineers and organizations remain responsible for the systems they design, configure, and deploy. ' +
         'This responsibility includes understanding the capabilities and limitations of AI tools, implementing appropriate security controls, reviewing AI-generated actions, and protecting users from unnecessary risk. Amazon\'s response reflected this principle by strengthening permission controls, ' +
         'emphasizing human oversight, and requiring safeguards such as least-privilege access and approval workflows before allowing AI agents to make significant changes.',
+      references: [
+        {
+          title: 'Bolt Support',
+          link: 'https://support.bolt.new/best-practices/prompting-effectively#:~:text=Don%E2%80%99t%20expect%20the%20LLM%20to%20have%20common%20sense.',
+        },
+        {
+          title: 'State of Code Developer Survey report: The current reality of AI coding',
+          link: 'https://www.sonarsource.com/blog/state-of-code-developer-survey-report-the-current-reality-of-ai-coding',
+        },
+      ],
     },
     {
       title: 'Conclusion',
-      body: 'This case reinforced an important lesson for me as I prepare to enter the software engineering profession. I regularly use AI to brainstorm ideas, explain concepts, and accelerate development, but I also recognize that AI is a tool—not a substitute for professional judgment. ' +
+      body: 'This case reinforced an important lesson for me as I prepare to enter the software engineering profession. I regularly use AI to brainstorm ideas, explain concepts, and accelerate development, but I also recognize that AI is a tool — not a substitute for professional judgment. ' +
         'Ultimately, I am accountable for the quality, security, and reliability of the software I produce. Whether reviewing AI-generated code, validating recommendations, or making deployment decisions, I believe software engineers have an ethical responsibility to understand the tools they use and to ' +
         'ensure that technology serves people safely and responsibly.',
+      references: [
+        {
+          title: 'Amazon Kiro AI Outage: The AWS Failure That Changed AI Safety',
+          link: 'https://www.ruh.ai/blogs/amazon-kiro-ai-outage-ai-governance-failure',
+        },
+        {
+          title: 'ACM Code of Ethics and Professional Conduct',
+          link: 'https://www.acm.org/code-of-ethics'
+        },
+      ],
     },
+  ],
+  principles: [
+    {
+      handle: 'Responsability / Accountability',
+      question: 'Who is responsible when an AI agent causes harm?',
+      listOpener: 'The incident demonstrated that even when an AI performs an action autonomously, humans remain responsible for AI\'s actions, including',
+      listItems: [
+        'granting its permissions',
+        'reviewing its actions',
+        'implementing safeguards, ',
+        'deciding when and how it is deployed',
+      ],
+      close: 'In the end, it is the software engineers who need to be held accountable for the systems they build and operate.',
+    },
+    {
+      handle: 'Avoiding Harm',
+      question: 'How do engineers protect users and organizations from unnecessary risk?',
+      listOpener: 'Engineers have an ethical obligation to:',
+      listItems: [
+        'minimize foreseeable risks',
+        'thoroughly test systems',
+        'implement safeguards',
+        'prevent avoidable failures',
+      ],
+      close: 'The production outage affected AWS services and potentially customers who depended on them.',
+    },
+    {
+      handle: 'Professional Competence',
+      question: 'Should engineers understand the capabilities and limitations of AI before relying on it?',
+      listOpener: 'Software engineers have a responsibility to:',
+      listItems: [
+        'understand the tools they use',
+        'know AI\'s limitations',
+        'avoid overreliance on automation',
+        'continue learning as technology evolves'
+      ],
+      close: 'This is especially relevant because AI is still a rapidly developing technology.',
+    },
+  ],
+  alternateSuggestion: [ // What could have been done differently?
+    'Rather than enforcing the use of AI agents immediately, a more ethical approach would have been to introduce AI coding agents gradually that emphasized human oversight, collaboration, and clearly defined safeguards. Engineers should have been required to review and approve any AI-generated code or infrastructure changes before they were deployed, especially in production environments. At the organizational level, leadership should have established governance policies from the beginning, including least-privilege access, approval workflow, auditing, and clear expectations for when AI could act autonomously.',
+    'This approach better reflects the ethical principles associated with the situation. Responsibility means that software engineers and organizational leaders remain accountable for the behavior of the AI systems they deploy, rather than shifting blame to the technology itself. Avoiding harm requires designing processes that minimize foreseeable risks to customers, employees, and business operations before incidents occur. Professional competence requires engineers to understand the capabilities and limitations of AI tools and to verify their work instead of assuming AI-generated actions are correct. By combining thoughtful governance with careful engineering practices, organizations can benefit from AI while protecting users, maintaining trust, and fulfilling their professional responsibilities.',
+    'This approach also better reflects the values that I hold most important. Collaboration and accountability are focused on working with others, understanding one another, encouraging engineers to work together rather than relying solely on automation.',
+    'Technology should have the ultimate purpose to benefit people, prioritizing reliability and protecting customers from unnecessary risk.',
+    'Human wisdom and ethical judgement will always remain essential, but they can also be naturally integrated into innovation and the responsible use of powerful new tools.',
+    'By combining thoughtful leadership with careful engineering practices, AWS could have embraced AI\'s benefits without sacrificing safety, trust, or professional responsibility.',
   ],
 };

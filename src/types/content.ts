@@ -127,10 +127,25 @@ export interface FaithContent {
   conclusion: string[];
 }
 
+export interface EthicalPrinciple {
+  handle: string;
+  question: string;
+  listOpener: string;
+  listItems: string[];
+  close: string;
+}
+
+export interface Link {
+  title: string;
+  link: string;
+}
+
 export interface EthicalContent {
   intro: string;
   topic: string;
   situation: { title: string; body: string[] }[];
-  ethicalPrinciples: string[];
-  discussionPoints: { title: string; body: string }[];
+  discussionPoints: { title: string; body: string; references: Link[] }[];
+  principles: EthicalPrinciple[];
+  alternateSuggestion: string[];
+  // references: {author: string; date: string; title: string; source: string; link: string; }[];
 }
