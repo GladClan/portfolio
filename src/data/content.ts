@@ -210,7 +210,7 @@ export const professionalContent: ProfessionalContent = {
         'This project reinforced the importance of designing software around the needs of its users. I learned that technical knowledge has the greatest impact when it is communicated clearly and used to help others make informed decisions.',
       growth: 'Developing responsive web applications and communicating technical concepts to a non-technical audience were not the only skills I developed in this project. This project directly reflects my desire to make a difference. By helping people recognize online scams, I hoped to reduce harm and empower users to make informed decisions. It reminded me that software can be used to educate, protect, and serve others.',
       githubUrl: 'https://github.com/GladClan/ScamShield',
-      demoUrl: 'https://online-scam-awareness-rilp.bolt.host/',
+      demoUrl: 'https://gladclan.github.io/ScamShield/',
       values: [values.difference, values.creativity],
     },
     {
