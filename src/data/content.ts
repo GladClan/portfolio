@@ -10,6 +10,8 @@ import {
   values,
 } from '../types/content';
 
+const resumePdfUrl = `${import.meta.env.BASE_URL}${encodeURI('Isaac Glad Resume 2026.pdf')}`;
+
 export const navItems: NavItem[] = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
@@ -337,7 +339,7 @@ export const professionalContent: ProfessionalContent = {
   resume: {
     summary:
       'Software Engineering student with experience in backend development, APIs, databases, and collaborative software projects. Passionate about creating secure, meaningful solutions through thoughtful design, continuous learning, and effective teamwork. I enjoy combining technical problem-solving with creativity to build software that serves people and makes a positive impact.',
-    pdfUrl: '/Isaac%20Glad%20Resume%202026.pdf',
+    pdfUrl: resumePdfUrl,
   },
 };
 
