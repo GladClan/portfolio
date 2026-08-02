@@ -10,11 +10,11 @@ import { reflectionContent } from "../data/content";
 type Tab = 'main' | 'attributes' | 'warnings' | 'strategies' | 'portfolio-review';
 
 const tabs: { id: Tab; label: string; icon: LucideIcon }[] = [ 
-  { id: 'main', label: 'Portfolio Reflection', icon: Sparkles },
+  { id: 'main', label: 'Reflection', icon: Sparkles },
   { id: 'attributes', label: 'Christlike Attributes', icon: Feather },
-  { id: 'warnings', label: 'Personal Warning Signs', icon: ShieldAlert },
-  { id: 'strategies', label: 'Strategies for Realignment', icon: Merge },
-  { id: 'portfolio-review', label: 'Portfolio Review', icon: ChefHat },
+  { id: 'warnings', label: 'Warning Signs', icon: ShieldAlert },
+  { id: 'strategies', label: 'Realignment', icon: Merge },
+  { id: 'portfolio-review', label: 'Review', icon: ChefHat },
 ];
 
 export default function ReflectionSection() {
