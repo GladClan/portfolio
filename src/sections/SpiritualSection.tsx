@@ -37,23 +37,21 @@ export default function SpiritualSection() {
       />
 
       <div id='spiritual-content'>
-        <Reveal>
-          <div className={s.tabs}>
-            {tabs.map((tab) => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => handleTabClick(tab.id)}
-                  className={`${s.tab} ${activeTab === tab.id ? s.tabActive : ''}`}
-                >
-                  <Icon size={16} />
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
-        </Reveal>
+        <div className={s.tabs}>
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => handleTabClick(tab.id)}
+                className={`${s.tab} ${activeTab === tab.id ? s.tabActive : ''}`}
+              >
+                <Icon size={16} />
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
 
         <div className={s.content}>
           <AnimatePresence mode="wait">
