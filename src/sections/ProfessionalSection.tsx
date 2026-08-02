@@ -21,6 +21,13 @@ const tabs: { id: Tab; label: string; icon: LucideIcon }[] = [
 export default function ProfessionalSection() {
   const [activeTab, setActiveTab] = useState<Tab>('skills');
 
+  const handleTabClick = (tab: Tab) => {
+    setActiveTab(tab);
+    const el = document.getElementById('professional-content');
+    if (el && el.getBoundingClientRect().top < 0)
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <Section id="professional">
       <SectionHeading
@@ -29,14 +36,14 @@ export default function ProfessionalSection() {
         subtitle="My technical skills, the projects I have built, the certifications I have earned, and my professional summary."
       />
 
-      <Reveal>
+      <div id='professional-content'>
         <div className={s.tabs}>
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabClick(tab.id)}
                 className={`${s.tab} ${activeTab === tab.id ? s.tabActive : ''}`}
               >
                 <Icon size={16} />
@@ -45,23 +52,23 @@ export default function ProfessionalSection() {
             );
           })}
         </div>
-      </Reveal>
 
-      <div className={s.content}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3 }}
-          >
-            {activeTab === 'skills' && <SkillsTab />}
-            {activeTab === 'projects' && <ProjectsTab />}
-            {activeTab === 'certifications' && <CertificationsTab />}
-            {activeTab === 'resume' && <ResumeTab />}
-          </motion.div>
-        </AnimatePresence>
+        <div className={s.content}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.3 }}
+            >
+              {activeTab === 'skills' && <SkillsTab />}
+              {activeTab === 'projects' && <ProjectsTab />}
+              {activeTab === 'certifications' && <CertificationsTab />}
+              {activeTab === 'resume' && <ResumeTab />}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </Section>
   );

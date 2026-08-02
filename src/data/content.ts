@@ -7,6 +7,7 @@ import {
   type SpiritualContent,
   type FaithContent,
   type EthicalContent,
+  type ReflectionContent,
   values,
 } from '../types/content';
 
@@ -20,6 +21,7 @@ export const navItems: NavItem[] = [
   { id: 'spiritual', label: 'Spiritual' },
   { id: 'faith', label: 'Faith & SE' },
   { id: 'ethics', label: 'Ethics' },
+  { id: 'reflection', label: 'Reflection'},
 ];
 
 export const homeContent: HomeContent = {
@@ -90,7 +92,7 @@ export const aboutContent: AboutContent = {
     {
       year: '2018',
       title: 'First Line of Code',
-      description: 'Wrote my first C# windows forms app in a high school intro CS course and was instantly hooked on the art of programming.',
+      description: 'Wrote my first C# windows forms app in a high school introductory computer programming course and was instantly hooked on the art of programming.',
     },
     // {
     //   year: '2021',
@@ -508,6 +510,9 @@ export const spiritualContent: SpiritualContent = {
     "Each project that I've chosen to work on relates to my principles — my personal values. To me, technical ability and spiritual growth are not separate pursuits. As I strive to strengthen my relationship with God, serve others, and cultivate creativity, those same principles influence how I design software, collaborate with others, and approach every new challenge.",
     "I also strive to use these principles to drive me in every other aspect of life as well, connecting them to how I choose to spend my time and what I devote my energy to.",
   ],
+  christlikeAttributeGrowth: [
+    
+  ]
 };
 
 export const faithContent: FaithContent = {
@@ -543,7 +548,7 @@ export const ethicalContent: EthicalContent = {
   intro:
     'Ethics in software engineering is not an add-on or a compliance checklist. It is the practice of asking, at every decision point, "Who does this affect, and how?" The following discussion is a relevant example of how principles should guide ethical reasoning in technical work.',
   topic: 'How much autonomy should AI coding agents have, and who is responsible when an AI makes a harmful change?',
-  situation: [
+  information: [
     {
       title: 'What happened?',
       body: 
@@ -683,3 +688,184 @@ export const ethicalContent: EthicalContent = {
     'By combining thoughtful leadership with careful engineering practices, AWS could have embraced AI\'s benefits without sacrificing safety, trust, or professional responsibility.',
   ],
 };
+
+export const reflectionContent: ReflectionContent = {
+  main: 'As I reviewed my portfolio, I realized that it tells more than the story of what I have accomplished. ' +
+    'It reflects who I am striving to become as a disciple of Jesus Christ and as a software engineer. ' +
+    'My values of **connection, making a difference, and creativity** are strengthened by developing Christlike attributes, and together they shape both my personal life and my professional goals.',
+  attributes: [
+    {
+      title: 'Knowledge',
+      intro: 'Every project in my portfolio represents an opportunity to learn. While I have gained technical skills in software engineering, I have also grown emotionally, spiritually, and interpersonally.',
+      content: [
+        {
+          intro: 'How I have seen growth',
+          bullets: [
+            'Learned new programming languages, frameworks, and development practices',
+            'Improved communication and teamwork through group projects',
+            'Developed stronger leadership and problem-solving skills',
+            'Increased my reliance on the Lord during difficult challenges',
+          ],
+        },
+        {
+          intro: 'How I want to continue growing',
+          bullets: [
+            'Continue learning throughout my career',
+            'Seek both technical and spiritual knowledge',
+            'Remain teachable regardless of experience',
+          ],
+        },
+      ]
+    },
+    {
+      title: 'Diligence',
+      intro: 'I have learned that meaningful work requires initiative and consistent effort. I want to contribute because I care about making a difference, not simply because an assignment requires it.',
+      content: [
+        {
+          intro: 'Examples from my portfolio',
+          bullets: [
+            'Taking leadership roles in team projects',
+            'Striving to produce quality work rather than the minimum required',
+            'Looking for opportunities to improve projects beyond assigned responsibilities',
+          ],
+        },
+        {
+          intro: 'Future focus',
+          bullets: [
+            'Continue taking initiative',
+            'Finish projects with excellence',
+            'Look for opportunities to serve wherever I am',
+          ],
+        },
+      ],
+      outro: '"Diligence includes doing many good things of your own free will instead of waiting for leaders to tell you what to do." — Preach My Gospel, Chapter 6'
+    },
+    {
+      title: 'Obedience',
+      intro: 'Leadership has taught me initiative, while obedience has taught me trust and humility.',
+      content: [
+        {
+          intro: 'I strive to be obedient by',
+          bullets: [
+            'Following the counsel of Church leaders',
+            'Honoring the covenants and standards I have chosen to live by',
+            'Supporting and serving my wife',
+            'Respecting direction from professors, mentors, and employers',
+          ],
+        },
+      ],
+      outro: 'Obedience reminds me that lasting success comes from aligning my life with God\'s will rather than simply following my own plans.'
+    },
+    {
+      title: 'Humility',
+      intro: 'For me, humility means recognizing that I do not know everything and being willing to learn.',
+      content: [
+        {
+          intro: 'Humility looks like',
+          bullets: [
+            'Asking questions instead of pretending I already know',
+            'Seeking clarification when something is unclear',
+            'Accepting feedback without becoming defensive',
+            'Listening to others, especially in leadership positions',
+            'Putting God\'s wisdom above my own',
+          ],
+        },
+      ],
+    outro: 'This attribute has helped me become both a better teammate and a better disciple.'
+    },
+    {
+      title: 'Hope',
+      intro: 'One of my favorite teachings from Preach My Gospel says that hope is not wishful thinking but "an abiding confidence, grounded in your faith in Christ."',
+      content: [
+        {
+          intro: 'Hope reminds me that',
+          bullets: [
+            'Mistakes are opportunities to learn',
+            'Repentance is a source of strength, not discouragement',
+            'Christ makes continual growth possible',
+            'My future is built on faith in Jesus Christ rather than my own perfection',
+          ],
+        },
+      ]
+    },
+  ],
+  warnings: {
+    intro: 'As I reflected on my habits, I identified several warning signs that indicate I am drifting away from my priorities.',
+    content: [
+      {
+        title: 'Consuming instead of creating',
+        intro: 'Sometimes I find myself watching YouTube or consuming entertainment instead of working on important responsibilities, especially when I feel overwhelmed or unsure how to begin.\nWhat this usually means is',
+        bullets: [
+          'I\'m avoiding something difficult',
+          'I need clarity more than distraction',
+        ],
+      },
+      {
+        title: 'Feeling emotionally empty',
+        intro: 'After spending too much time consuming content, I often notice an empty feeling.\nI\'ve realized that entertainment cannot replace',
+        bullets: [
+          'meaningful creation',
+          'genuine connection',
+          'spiritual nourishment',
+          'purposeful work',
+        ],
+      },
+      {
+        title: 'Frustration and impatience',
+        intro: 'When I become overly focused on solving one difficult problem, I can lose perspective and become impatient. Signs of this include',
+        bullets: [
+          'Tunnel vision',
+          'Frustration',
+          'Forgetting to enjoy the learning process',
+          'Prioritizing productivity over peace',
+        ],
+      },
+    ],
+  },
+  strategies: {
+    intro: 'When I recognize these warning signs, I have several practices that help me return to what matters most.',
+    content: [
+      {
+        intro: 'Spiritually',
+        bullets: [
+          'Pray and spend time in quiet meditation',
+          'Study the scriptures',
+          'Remember my relationship with Jesus Christ',
+        ],
+      },
+      {
+        intro: 'Personally',
+        bullets: [
+          'Call or spend time with my wife',
+          'Connect with family or friends',
+          'Focus on relationships instead of isolation',
+        ],
+      },
+      {
+        intro: 'Professionally',
+        bullets: [
+          'Break large tasks into smaller, manageable steps',
+          'Take a short break to reset my perspective',
+          'Change locations if I feel mentally stuck',
+          'Return with a clearer mind instead of forcing progress',
+        ],
+      },
+    ],
+  },
+  review: {
+    paragraph: 'Looking back through my portfolio, I see a consistent pattern.' +
+      'My projects demonstrate technical growth, but they also reflect the person I am becoming.',
+    content: {
+      intro: 'Throughout my portfolio, I hope others will see',
+      bullets: [
+        'A desire to strengthen relationships',
+        'A commitment to serving others through my work',
+        'A love of building meaningful solutions',
+        'A growing reliance on Jesus Christ in every aspect of my life',
+      ]
+    },
+    close: 'The portfolio is ultimately not about proving what I have accomplished. ' +
+      'It is about showing the direction I am moving. ' +
+      'I know I still have much to learn, but I am grateful that through Jesus Christ I can continue growing in knowledge, diligence, obedience, humility, hope, and every other Christlike attribute throughout my life.',
+  },
+}

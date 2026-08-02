@@ -114,6 +114,7 @@ export interface SpiritualContent {
   songs: Song[];
   talks: Talk[];
   personalGrowth: string[];
+  christlikeAttributeGrowth: string[];
 }
 
 export interface FaithTopic {
@@ -143,9 +144,45 @@ export interface Link {
 export interface EthicalContent {
   intro: string;
   topic: string;
-  situation: { title: string; body: string[] }[];
+  information: { title: string; body: string[] }[];
   discussionPoints: { title: string; body: string; references: Link[] }[];
   principles: EthicalPrinciple[];
   alternateSuggestion: string[];
   // references: {author: string; date: string; title: string; source: string; link: string; }[];
+}
+
+export interface bulletHeader {
+  intro: string;
+  bullets: string[];
+}
+
+export interface titledListWithIntro {
+  title: string;
+  intro: string;
+  bullets: string[];
+}
+
+export interface christlikeAttribute {
+    title: string;
+    intro: string;
+    content: bulletHeader[];
+    outro?: string;
+}
+
+export interface ReflectionContent {
+  main: string;
+  attributes: christlikeAttribute[];
+  warnings: {
+    intro: string;
+    content: titledListWithIntro[];
+  };
+  strategies: {
+    intro: string;
+    content: bulletHeader[];
+  };
+  review: {
+    paragraph: string;
+    content: bulletHeader;
+    close: string;
+  };
 }

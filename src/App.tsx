@@ -7,6 +7,7 @@ import ProfessionalSection from './sections/ProfessionalSection';
 import SpiritualSection from './sections/SpiritualSection';
 import FaithSection from './sections/FaithSection';
 import EthicsSection from './sections/EthicsSection';
+import ReflectionSection from './sections/ReflectionSection';
 import styles from './App.module.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <SpiritualSection />
         <FaithSection />
         <EthicsSection />
+        <ReflectionSection />
       </main>
       <Footer />
     </div>

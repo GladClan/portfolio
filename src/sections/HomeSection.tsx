@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Github, Linkedin } from 'lucide-react';
-import { homeContent, navItems } from '../data/content';
+import { homeContent, navItems, professionalContent } from '../data/content';
 import s from './HomeSection.module.css';
 
 export default function HomeSection() {
@@ -63,13 +63,15 @@ export default function HomeSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className={s.ctaRow}
           >
-            <button
-              onClick={() => handleNavClick('professional')}
+            <a
+              href={professionalContent.resume.pdfUrl}
               className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FileText size={18} />
               View Resume
-            </button>
+            </a>
             <a
               href={homeContent.githubUrl}
               target="_blank"

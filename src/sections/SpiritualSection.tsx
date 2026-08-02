@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Milestone, BookOpen, PenLine, Sprout, Quote, type LucideIcon, ExternalLink, Music2, Music4, ChevronDown } from 'lucide-react';
+import { Milestone, BookOpen, PenLine, Sprout, Quote, type LucideIcon, ExternalLink, Music2, Music4, ChevronDown, SunMedium } from 'lucide-react';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
@@ -21,6 +21,13 @@ const tabs: { id: Tab; label: string; icon: LucideIcon }[] = [
 export default function SpiritualSection() {
   const [activeTab, setActiveTab] = useState<Tab>('milestones');
 
+  const handleTabClick = (tab: Tab) => {
+    setActiveTab(tab);
+    const el = document.getElementById('spiritual-content');
+    if (el && el.getBoundingClientRect().top < 0)
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <Section id="spiritual" className="surface-bg">
       <SectionHeading
@@ -29,40 +36,42 @@ export default function SpiritualSection() {
         subtitle="The milestones, scriptures, and reflections that shape my faith journey alongside my career."
       />
 
-      <Reveal>
-        <div className={s.tabs}>
-          {tabs.map((tab) => {
-            const Icon = tab.icon;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`${s.tab} ${activeTab === tab.id ? s.tabActive : ''}`}
-              >
-                <Icon size={16} />
-                {tab.label}
-              </button>
-            );
-          })}
-        </div>
-      </Reveal>
+      <div id='spiritual-content'>
+        <Reveal>
+          <div className={s.tabs}>
+            {tabs.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabClick(tab.id)}
+                  className={`${s.tab} ${activeTab === tab.id ? s.tabActive : ''}`}
+                >
+                  <Icon size={16} />
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        </Reveal>
 
-      <div className={s.content}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3 }}
-          >
-            {activeTab === 'milestones' && <MilestonesTab />}
-            {activeTab === 'scriptures' && <ScripturesTab />}
-            {activeTab === 'talks' && <TalksTab />}
-            {activeTab === 'music' && <SongsTab />}
-            {activeTab === 'growth' && <GrowthTab />}
-          </motion.div>
-        </AnimatePresence>
+        <div className={s.content}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.3 }}
+            >
+              {activeTab === 'milestones' && <MilestonesTab />}
+              {activeTab === 'scriptures' && <ScripturesTab />}
+              {activeTab === 'talks' && <TalksTab />}
+              {activeTab === 'music' && <SongsTab />}
+              {activeTab === 'growth' && <GrowthTab />}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </Section>
   );
@@ -186,7 +195,7 @@ function TalksTab() {
               >
                 {
                   r.reflection.map((P, i) => 
-                  <p className={s.reflectionBody} id={`paragraph-${i}`}>{P}</p>
+                  <p className={s.reflectionBody} key={`paragraph-${i}`}>{P}</p>
                   )
                 }
               </motion.div>
@@ -237,7 +246,7 @@ function SongsTab() {
                 className={s.expandContent}
               >
                 {r.reflection.map((text, i) => 
-                  <p id={`paragraph-${i}`} className={s.reflectionBody}>{text}</p>
+                  <p key={`paragraph-${i}`} className={s.reflectionBody}>{text}</p>
                 )}
               </motion.div>
             }
@@ -258,7 +267,7 @@ function GrowthTab() {
         </div>
         {
           spiritualContent.personalGrowth.map((paragraph, i) =>
-            <p id={`paragraph-${i}`} className={s.growthText}>{paragraph}</p>
+            <p key={`paragraph-${i}`} className={s.growthText}>{paragraph}</p>
           )
         }
       </Card>
