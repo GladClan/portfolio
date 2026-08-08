@@ -18,45 +18,60 @@ export default function HomeSection() {
 
       <div className={s.heroContent}>
         <div className={s.heroInner}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className={s.statusBadge}
-          >
-            <span className={s.statusDot} />
-            <span className={s.statusText}>Available for new opportunities</span>
-          </motion.div>
+          <div className={s.introAndPicture}>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className={s.heroName}
-          >
-            {homeContent.name.split(' ')[0]}
-            <br />
-            <span className="gradient-text">{homeContent.name.split(' ').slice(1).join(' ')}</span>
-          </motion.h1>
+            {/* Left side: name, header paragraph, and picture */}
+            <div className={s.introAndPictureSection}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className={s.statusBadge}
+              >
+                <span className={s.statusDot} />
+                <span className={s.statusText}>Available for new opportunities</span>
+              </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className={s.heroTitle}
-          >
-            {homeContent.title}
-          </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className={s.heroName}
+              >
+                {homeContent.name.split(' ')[0]}
+                <br />
+                <span className="gradient-text">{homeContent.name.split(' ').slice(1).join(' ')}</span>
+              </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className={s.heroIntro}
-          >
-            {homeContent.intro}
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className={s.heroTitle}
+              >
+                {homeContent.title}
+              </motion.p>
+            </div>
 
+            {/* Right side: picture */}
+            <div className={s.introAndPictureSection}>
+              <img
+                src='https://media.licdn.com/dms/image/v2/D5603AQGRAmGgDD4whQ/profile-displayphoto-shrink_400_400/B56ZW.xNahHEAg-/0/1742662326243?e=1787788800&v=beta&t=L5uR3G4c3O5jhjhnEUyKIkKIgdFZ80lZRHJDDjrrhKg'
+                className={s.heroPicture}
+              />
+            </div>
+          </div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className={s.heroIntro}
+              >
+                {homeContent.intro}
+              </motion.p>
+
+          {/* External Links: Resume, GitHub, and LinkedIn */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}

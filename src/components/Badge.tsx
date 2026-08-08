@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import s from './Badge.module.css';
 
 interface BadgeProps {
-  children: string;
+  children: ReactNode;
   variant?: 'primary' | 'secondary' | 'accent' | 'neutral';
 }
 

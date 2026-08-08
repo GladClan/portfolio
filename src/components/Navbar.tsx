@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { navItems } from '../data/content';
+import { FileText, Github, Linkedin, Menu, X } from 'lucide-react';
+import { homeContent, navItems, professionalContent } from '../data/content';
 import s from './Navbar.module.css';
 
 export default function Navbar() {
@@ -39,6 +39,41 @@ export default function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  function ExternalLinks() {
+    return (
+      <div className={s.eLinks}>
+        {/* Resume, GitHub, and LinkedIn links */}
+        <a
+          href={professionalContent.resume.pdfUrl}
+          className={`${s.externalLink} ${s.Primary}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FileText size={'1rem'} />
+          <span className={s.eLinkText}>View Resume</span>
+        </a>
+        <a
+          href={homeContent.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${s.externalLink} ${s.Secondary}`}
+        >
+          <Github size={'1rem'} />
+          <span className={s.eLinkText}>GitHub</span>
+        </a>
+        <a
+          href={homeContent.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${s.externalLink} ${s.Secondary}`}
+        >
+          <Linkedin size={'1rem'} />
+          <span className={s.eLinkText}>LinkedIn</span>
+        </a>
+      </div>
+    )
+  }
+
   return (
     <>
       <header className={`${s.header} ${scrolled ? s.scrolled : ''}`}>
@@ -64,6 +99,8 @@ export default function Navbar() {
             ))}
           </ul>
 
+          <ExternalLinks />
+
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={s.mobileToggle}
@@ -75,6 +112,7 @@ export default function Navbar() {
         </nav>
       </header>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

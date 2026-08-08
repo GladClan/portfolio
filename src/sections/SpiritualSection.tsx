@@ -143,7 +143,7 @@ function ScripturesTab() {
                 transition={{ duration: 0.3 }}
                 className={s.expandContent}
               >
-              <p className={s.reflectionBody}>{scripture.reflection}</p>
+              <p className={s.contentBody}>{scripture.reflection}</p>
               </motion.div>
             }
           </AnimatePresence>
@@ -156,12 +156,12 @@ function ScripturesTab() {
 function TalksTab() {
   const [expanded, setExpanded] = useState<string | null>();
   return (
-    <div className={s.reflectionsList}>
+    <div className={s.contentList}>
       {spiritualContent.talks.map((r, i) => (
         <Card key={i} delay={i * 0.1}>
-          <div className={s.reflectionHeader}>
+          <div className={s.contentHeader}>
             <PenLine size={20} />
-            <h3 className={s.reflectionTitle}>{r.title}</h3>
+            <h3 className={s.contentTitle}>{r.title}</h3>
             <a
               href={r.link}
               target="_blank"
@@ -193,7 +193,7 @@ function TalksTab() {
               >
                 {
                   r.reflection.map((P, i) => 
-                  <p className={s.reflectionBody} key={`paragraph-${i}`}>{P}</p>
+                  <p className={s.contentBody} key={`paragraph-${i}`}>{P}</p>
                   )
                 }
               </motion.div>
@@ -208,14 +208,16 @@ function TalksTab() {
 function SongsTab() {
   const [expanded, setExpanded] = useState<string | null>();
   return (
-    <div className={s.reflectionsList}>
-      {spiritualContent.songs.map((r, i) => (
+    <div className={s.contentList}>
+      {spiritualContent.songs.map((song, i) => (
         <Card key={i} delay={i * 0.1}>
-          <div className={s.reflectionHeader}>
+
+          {/* Title */}
+          <div className={s.contentHeader}>
             <Music2 size={20} />
-            <h3 className={s.reflectionTitle}>{r.title}</h3>
+            <h3 className={s.contentTitle}>{song.title}</h3>
             <a
-              href={r.link}
+              href={song.link}
               target="_blank"
               rel="noopener noreferrer"
               className={s.iconLink}
@@ -224,18 +226,31 @@ function SongsTab() {
               <ExternalLink size={16} />
             </a>
           </div>
+
+          {/* Embedded video */}
+          <iframe
+            src={song.embedLink? song.embedLink : song.link}
+            title={`"YouTube video player: ${song.title}"`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className={s.embeddedVideo}
+          />
+
+          {/* Show reflection */}
           <button
             className={s.expandButton}
-            onClick={() => setExpanded(expanded === r.id ? null : r.id)}
+            onClick={() => setExpanded(expanded === song.id ? null : song.id)}
           >
-            {expanded === r.id ? 'Hide reflection' : 'Show reflection'}
+            {expanded === song.id ? 'Hide reflection' : 'Show reflection'}
             <ChevronDown
               size={16}
-              className={`${s.chevron} ${expanded === r.id ? s.chevronOpen : ''}`}
+              className={`${s.chevron} ${expanded === song.id ? s.chevronOpen : ''}`}
             />
           </button>
+
+          {/* Reflection content */}
           <AnimatePresence>
-            {expanded === r.id && 
+            {expanded === song.id && 
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
@@ -243,8 +258,8 @@ function SongsTab() {
                 transition={{ duration: 0.3 }}
                 className={s.expandContent}
               >
-                {r.reflection.map((text, i) => 
-                  <p key={`paragraph-${i}`} className={s.reflectionBody}>{text}</p>
+                {song.reflection.map((text, i) => 
+                  <p key={`paragraph-${i}`} className={s.contentBody}>{text}</p>
                 )}
               </motion.div>
             }

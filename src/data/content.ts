@@ -10,8 +10,10 @@ import {
   type ReflectionContent,
   values,
 } from '../types/content';
+import { Skills_Data_Id_Enum } from './skillsdata';
 
 const resumePdfUrl = `${import.meta.env.BASE_URL}${encodeURI('Isaac Glad Resume 2026.pdf')}`;
+const lampGifUrl = `${import.meta.env.BASE_URL}${encodeURI('lamps-game-art.gif')}`
 
 export const navItems: NavItem[] = [
   { id: 'home', label: 'Home' },
@@ -156,15 +158,74 @@ export const professionalContent: ProfessionalContent = {
   skills: [
     {
       category: 'Languages',
-      skills: ['C#', 'TypeScript', 'Python', 'SQL', 'Java', 'YAML'],
+      skills: [
+        {
+          title: 'C#',
+          skillDataId: Skills_Data_Id_Enum.C_Sharp
+        },
+        {
+          title: 'TypeScript',
+          skillDataId: Skills_Data_Id_Enum.TypeScript
+        }, 
+        {
+          title: 'Python',
+          skillDataId: Skills_Data_Id_Enum.Python
+        }, 
+        {
+          title: 'SQL',
+          skillDataId: Skills_Data_Id_Enum.SQL
+        }, 
+        {
+          title: 'Java',
+          skillDataId: Skills_Data_Id_Enum.Java
+        }, 
+        {
+          title: 'YAML',
+          skillDataId: Skills_Data_Id_Enum.YAML
+        }
+      ],
     },
     {
       category: 'Frontend',
-      skills: ['HTML', 'CSS', 'React', 'Next.js', 'API Integration'],
+      skills: [
+        {
+          title: 'HTML',
+          skillDataId: Skills_Data_Id_Enum.HTML
+        },
+        {
+          title: 'CSS',
+          skillDataId: Skills_Data_Id_Enum.CSS
+        }, 
+        {
+          title: 'React',
+          skillDataId: Skills_Data_Id_Enum.React
+        }, 
+        {
+          title: 'Next.js',
+          skillDataId: Skills_Data_Id_Enum.Next_JS
+        }, 
+        {
+          title: 'API Integration',
+          skillDataId: Skills_Data_Id_Enum.API_Integration
+        }
+      ],
     },
     {
       category: 'Backend',
-      skills: ['ASP.NET', 'Node.js', 'REST API Design'],
+      skills: [
+        {
+          title: 'ASP.NET',
+          skillDataId: Skills_Data_Id_Enum.ASP_NET
+        },
+        {
+          title: 'Node.js',
+          skillDataId: Skills_Data_Id_Enum.Node_JS
+        },
+        {
+          title: 'REST API Design',
+          skillDataId: Skills_Data_Id_Enum.REST_API
+        }
+      ],
     },
     // {
     //   category: 'DevOps & Cloud',
@@ -172,7 +233,28 @@ export const professionalContent: ProfessionalContent = {
     // },
     {
       category: 'Practices',
-      skills: ['Test-Driven Development', 'Code Review', 'Agile', 'System Design', 'Technical Writing'],
+      skills: [
+        {
+          title: 'Test-Driven Development',
+          skillDataId: Skills_Data_Id_Enum.Test_Driven_Development
+        },
+        {
+          title: 'Code Review',
+          skillDataId: Skills_Data_Id_Enum.Code_Review
+        }, 
+        {
+          title: 'Agile',
+          skillDataId: Skills_Data_Id_Enum.Agile
+        }, 
+        {
+          title: 'System Design',
+          skillDataId: Skills_Data_Id_Enum.System_Design
+        }, 
+        {
+          title: 'Technical Writing',
+          skillDataId: Skills_Data_Id_Enum.Technical_Writing
+        }
+      ],
     },
   ],
   projects: [
@@ -180,10 +262,43 @@ export const professionalContent: ProfessionalContent = {
       id: 'mcp',
       title: 'SQL MCP Server',
       problem:
-        'The company had a large legacy Point of Sale database containing valuable business information, but querying it required extensive SQL knowledge. Business users wanted to ask natural language questions through Claude AI without exposing sensitive customer information or requiring direct database access.',
+        'Contract Appliance had a large legacy Point of Sale database containing valuable business information, but querying it required extensive SQL knowledge. Company executives wanted to ask natural language questions through Claude AI without requiring direct database access.',
       solution:
         "I designed and implemented a custom Model Context Protocol (MCP) server in C# that securely connected Claude AI to the company's SQL Server database. The system translated natural language requests into validated SQL queries while enforcing security rules, sanitizing sensitive information, and providing meaningful business insights.",
-      technologies: ['Model Context Protocol (MCP)', 'C#', 'ASP.NET Core', 'SQL', 'REST APIs', 'GIT/GitHub', 'LAN Networking', 'Claude AI'],
+      skills: [
+        {
+          title: 'Model Context Protocol (MCP)',
+          skillDataId: Skills_Data_Id_Enum.Model_Context_Protocol
+        },
+        {
+          title: 'C#',
+          skillDataId: Skills_Data_Id_Enum.C_Sharp
+        },
+        {
+          title: 'ASP.NET Core',
+          skillDataId: Skills_Data_Id_Enum.ASP_NET
+        },
+        {
+          title: 'SQL',
+          skillDataId: Skills_Data_Id_Enum.SQL
+        },
+        {
+          title: 'REST APIs',
+          skillDataId: Skills_Data_Id_Enum.REST_API
+        },
+        {
+          title: 'GIT/GitHub',
+          skillDataId: Skills_Data_Id_Enum.Git
+        },
+        {
+          title: 'LAN Networking',
+          skillDataId: Skills_Data_Id_Enum.LAN_Networking
+        },
+        {
+          title: 'Claude AI',
+          skillDataId: Skills_Data_Id_Enum.Claude
+        }
+      ],
       challenges:
         [
           'Reverse-engineering a complex legacy database with limited documentation',
@@ -203,7 +318,32 @@ export const professionalContent: ProfessionalContent = {
         'Many people struggle to recognize increasingly sophisticated online scams, making them vulnerable to fraud and identity theft.',
       solution:
         'I developed an interactive educational website that teaches users how to identify common scams, recognize warning signs, and respond safely through practical examples and educational resources.',
-      technologies: ['TypeScript', 'CSS', 'React', 'Vite', 'Responsive web design', 'Educational content design', ],
+      skills: [
+        {
+          title: 'TypeScript',
+          skillDataId:Skills_Data_Id_Enum.TypeScript
+        },
+        {
+          title: 'CSS',
+          skillDataId: Skills_Data_Id_Enum.CSS
+        },
+        {
+          title: 'React',
+          skillDataId: Skills_Data_Id_Enum.React
+        },
+        {
+          title: 'Vite',
+          skillDataId: Skills_Data_Id_Enum.Vite
+        },
+        {
+          title: 'Responsive web design',
+          skillDataId: Skills_Data_Id_Enum.Responsive_Web_Design
+        },
+        {
+          title: 'Educational content design',
+          skillDataId: Skills_Data_Id_Enum.Educational_Content
+        },
+      ],
       challenges:
         [
           'Presenting cybersecurity concepts in language accessible to non-technical users',
@@ -224,7 +364,32 @@ export const professionalContent: ProfessionalContent = {
         'Our team needed to design an interactive dashboard while simultaneously documenting each phase of the software development lifecycle for both technical and non-technical stakeholders.',
       solution:
         "As project manager, I coordinated the team's work, delegated responsibilities, tracked progress, and ensured that both the dashboard and supporting documentation met project requirements.",
-      technologies: ['Microsoft Excel', 'Project Management', 'Software development lifecycle (SDLC)', 'Technical documentation', 'Team coordination', 'Presentation skills'],
+      skills: [
+        {
+          title: 'Microsoft Excel',
+          skillDataId: Skills_Data_Id_Enum.Microsoft_Excel
+        },
+        {
+          title: 'Project Management',
+          skillDataId: Skills_Data_Id_Enum.Project_Management
+        },
+        {
+          title: 'Software development lifecycle (SDLC)',
+          skillDataId: Skills_Data_Id_Enum.Software_Development_Lifecycle
+        },
+        {
+          title: 'Technical documentation',
+          skillDataId: Skills_Data_Id_Enum.Technical_Writing
+        },
+        {
+          title: 'Team coordination',
+          skillDataId: Skills_Data_Id_Enum.Team_Management
+        },
+        {
+          title: 'Presentation skills',
+          skillDataId: Skills_Data_Id_Enum.Presentation
+        },
+      ],
       challenges:
         [
           'Coordinating schedules across multiple team members',
@@ -244,7 +409,32 @@ export const professionalContent: ProfessionalContent = {
         'Managing programming assignments across Canvas and GitHub Classroom required repetitive manual work for instructors and created opportunities for human error.',
       solution:
         "Our team developed an API that integrated the two platforms to automate assignment management and streamline the grading workflow.",
-      technologies: ['TypeScript', 'Project Management', 'Peer Code Reviews', 'Technical Presentations', 'Authentication', 'Team Collaboration'],
+      skills: [
+        {
+          title: 'TypeScript',
+          skillDataId: Skills_Data_Id_Enum.TypeScript
+        },
+        {
+          title:  'Project Management',
+          skillDataId: Skills_Data_Id_Enum.Project_Management
+        },
+        {
+          title:  'Code Review',
+          skillDataId: Skills_Data_Id_Enum.Code_Review
+        },
+        {
+          title:  'Technical Presentations',
+          skillDataId: Skills_Data_Id_Enum.Presentation
+        },
+        {
+          title:  'Authentication',
+          skillDataId: Skills_Data_Id_Enum.Authentication
+        },
+        {
+          title:  'Team coordination',
+          skillDataId: Skills_Data_Id_Enum.Team_Management
+        },
+      ],
       challenges:
         [
           'Understanding two different systems and how they communicate',
@@ -260,11 +450,29 @@ export const professionalContent: ProfessionalContent = {
     {
       id: 'lamps-game',
       title: 'Lamps Game',
+      image: lampGifUrl,
       problem:
         'Our goal was to create a game that communicated a meaningful message while delivering an engaging player experience.',
       solution:
         "Our team developed a narrative-driven game centered on using one's light to help others, contributing to implementation, testing, refinement, and feature development throughout the project.",
-      technologies: ['Unity Game Engine', 'C#', 'Software testing', 'UI implementation'],
+      skills: [
+        {
+          title: 'Unity Game Engine',
+          skillDataId: Skills_Data_Id_Enum.Unity
+        },
+        {
+          title: 'C#',
+          skillDataId: Skills_Data_Id_Enum.C_Sharp
+        },
+        {
+          title: 'Software testing',
+          skillDataId: Skills_Data_Id_Enum.Test_Driven_Development
+        },
+        {
+          title: 'UI design',
+          skillDataId: Skills_Data_Id_Enum.UI_implementation
+        },
+      ],
       challenges:
         [
           'Balancing gameplay with storytelling',
@@ -285,7 +493,40 @@ export const professionalContent: ProfessionalContent = {
         'I wanted to create a game that combined strategic gameplay with meaningful player choices while giving myself the opportunity to explore full-stack game development using modern technologies.',
       solution:
         "I'm developing a turn-based RPG featuring party management, tactical combat, character progression, and narrative-driven gameplay using Next.js, TypeScript, and an ASP.NET backend.",
-      technologies: ['Next.js', 'TypeScript', 'C#', 'ASP.NET Core', 'Git/GitHub', 'Full-stack development', 'Data modeling', 'Backend API development'],
+      skills: [
+        {
+          title: 'Next.js',
+          skillDataId: Skills_Data_Id_Enum.Next_JS
+        },
+        {
+          title: 'TypeScript',
+          skillDataId: Skills_Data_Id_Enum.TypeScript
+        },
+        {
+          title: 'C#',
+          skillDataId: Skills_Data_Id_Enum.C_Sharp
+        },
+        {
+          title: 'ASP.NET Core',
+          skillDataId: Skills_Data_Id_Enum.ASP_NET
+        },
+        {
+          title: 'Git/GitHub',
+          skillDataId: Skills_Data_Id_Enum.Git
+        },
+        {
+          title: 'Full-stack development',
+          skillDataId: Skills_Data_Id_Enum.Full_Stack_dev
+        },
+        {
+          title: 'Data modeling',
+          skillDataId: Skills_Data_Id_Enum.Data_Modeling
+        },
+        {
+          title: 'API development',
+          skillDataId: Skills_Data_Id_Enum.REST_API
+        },
+      ],
       challenges:
         [
           'Designing game systems that are engaging and balanced',
@@ -471,6 +712,7 @@ export const spiritualContent: SpiritualContent = {
       id: 'look',
       title: 'Look Unto Christ',
       link: 'https://youtu.be/UdjWhPoFMKE?t=130',
+      embedLink: 'https://www.youtube.com/embed/UdjWhPoFMKE?si=cQFS6pR7LJ53__Tc&amp;start=130',
       reflection: [
         'I have a strong emotional connection to this song from the time I had the privilege to be a part of a choir performing it. It offers steady encouragements: "doubt not," "fear not," "heed not," "press on."',
         'The song seems to represent life, going through tribultion, doubts, conspiring foes, and mocking voices, weakness and mourning. Through all of the difficulties, it encourages me to look to the Saviour, my "Lord and Friend."'
@@ -480,6 +722,7 @@ export const spiritualContent: SpiritualContent = {
       id: 'water',
       title: 'Living Water by James Thorup',
       link: 'https://www.churchofjesuschrist.org/media/video/2024-03-0060-living-water-official-track-video-feat-james-thorup-1080p-eng-mp4',
+      embedLink: 'https://www.youtube.com/embed/G1BX9Xs3KsY?si=ZgzI5fasxR8t5A8Z',
       reflection: [
         'Something that I\'ve realized I love to hear in song and story is imagery. My favorite songs evoke colors and scenes in the mind that enhance the impact of the song, bringing it to life internally. Parables are an excellent example of this - the Saviour teaching through situations and experiences that are familiar to the audience.',
         'The song Living Water is a splended example of this as well. It relates my personal spiritaul health to a garden that I am tending to. The plants and flowers in it needing attention and care, and most importantly, water.',
@@ -490,6 +733,7 @@ export const spiritualContent: SpiritualContent = {
       id: 'wounds',
       title: 'Behold the Wounds in Jesus\' Hands',
       link: 'https://www.churchofjesuschrist.org/media/music/songs/2025-10-behold-the-wounds-in-jesus-hands',
+      embedLink: 'https://www.youtube.com/embed/oNQF2G64O-g?si=Ek6qKLeanUnuGxOp',
       reflection: [
         'I have had some growing experiences in my life that have taught me truly that the Saviour is real and has a physical presence. Singing this song is singing my testimony that Jesus did live. He suffered trials, temptation, and pain - and he did it so that He could heal and comfort me.',
         'Even more than that, He stands beside me, even when I feel so alone, like He should be upset or resentful - He isn\'t. He\'s right there beside me with a knowing smile and a hand on my shoulder, encouraging me to rise up and  get to work.'
@@ -499,6 +743,7 @@ export const spiritualContent: SpiritualContent = {
       id: 'stranger',
       title: 'No Stranger',
       link: 'https://www.churchofjesuschrist.org/media/music/songs/no-stranger?lang=eng',
+      embedLink: 'https://www.youtube.com/embed/64obw8I-3Gk?si=Ad6C98kOJk8uaU3f',
       reflection: [
         'I\'m sure anyone could relate when I say I\'ve had moments when I\'ve felt alone or overwhelmed by life, or when I felt that I made a mistake that leaves me feeling empty and meaningless.',
         'In many of those moments, I took time to listen to this song and be reminded that the Lord knows those feelings — Jesus is intimately aware of our low moments and how hard it can feel to repeatedly make mistakes. That\'s one of the reasons He came down, after all. So when things feel out of control, then He can step in and remind us that He is Master over wind and tempest.',

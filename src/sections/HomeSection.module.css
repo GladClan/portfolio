@@ -35,7 +35,6 @@
 
 .heroInner {
   max-width: 56rem;
-
 }
 
 .statusBadge {
@@ -65,6 +64,35 @@
 .statusText {
   font-size: 0.875rem;
   color: var(--color-text-muted);
+}
+
+.introAndPicture {
+  display: flex;
+  flex-direction: row;
+}
+
+.introAndPictureSection {
+  width: 50%;
+}
+
+.heroPicture {
+  width: 65%;
+  border: 5px solid var(--color-primary);
+  border-radius: 5000px;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.09), 0 0 2rem rgba(245, 158, 11, 0.16);
+}
+
+@media (max-width: 768px) {
+  .introAndPicture {
+    flex-direction: column;
+  }
+  .introAndPictureSection {
+    width: 100%;
+  }
+  .heroPicture {
+    width: 100%;
+    border-radius: 0px;
+  }
 }
 
 .heroName {

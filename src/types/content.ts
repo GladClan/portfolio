@@ -36,9 +36,14 @@ export interface Principle {
   reflection: string;
 }
 
+export interface Skill {
+  title: string;
+  skillDataId: string;
+}
+
 export interface SkillCategory {
   category: string;
-  skills: string[];
+  skills: Skill[];
 }
 
 export enum values {
@@ -50,9 +55,10 @@ export enum values {
 export interface Project {
   id: string;
   title: string;
+  image?: string;
   problem: string;
   solution: string;
-  technologies: string[];
+  skills: Skill[];
   challenges: string[];
   lessons: string;
   growth: string;
@@ -98,6 +104,8 @@ export interface Song {
   id: string;
   title: string;
   link: string;
+  embedLink?: string;
+  embedSource?: string;
   reflection: string[];
 }
 
@@ -105,6 +113,7 @@ export interface Talk {
   id: string;
   title: string;
   link: string;
+  embedLink?: string;
   reflection: string[];
 }
 

@@ -263,7 +263,7 @@
 }
 
 /* Reflections */
-.reflectionsList {
+.contentList {
   max-width: 48rem;
   margin-inline: auto;
   display: flex;
@@ -271,23 +271,23 @@
   gap: 1.5rem;
 }
 
-.reflectionHeader {
+.contentHeader {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.reflectionHeader svg {
+.contentHeader svg {
   color: var(--color-secondary);
 }
 
-.reflectionTitle {
+.contentTitle {
   font-size: 1.125rem;
   font-weight: 700;
 }
 
-.reflectionBody {
+.contentBody {
   padding-top: 1rem;
   /* margin-top: 1rem; */
   color: var(--color-text-muted);
@@ -295,6 +295,18 @@
   white-space: pre-line;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+.embeddedVideo {
+  max-width: 1080px;
+  height: 252.5px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .embeddedVideo {
+    height: 560px;
+  }
 }
 
 /* Growth */

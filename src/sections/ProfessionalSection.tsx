@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code2, FolderOpen, Award, FileText, ChevronDown, ExternalLink, Github, Lightbulb, AlertTriangle, type LucideIcon, Sprout } from 'lucide-react';
+import { Code2, FolderOpen, Award, FileText, ChevronDown, ExternalLink, Github, Lightbulb, AlertTriangle, Cpu, type LucideIcon, Sprout } from 'lucide-react';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
 import Card from '../components/Card';
 import Badge from '../components/Badge';
 import { professionalContent } from '../data/content';
+import { SKILLS_DATA } from '../data/skillsdata';
 import s from './ProfessionalSection.module.css';
+import { SkillData } from '../types/skillsdata';
+import { IconType } from 'react-icons';
 
 type Tab = 'skills' | 'projects' | 'certifications' | 'resume';
 
@@ -19,7 +22,7 @@ const tabs: { id: Tab; label: string; icon: LucideIcon }[] = [
 ];
 
 export default function ProfessionalSection() {
-  const [activeTab, setActiveTab] = useState<Tab>('skills');
+  const [activeTab, setActiveTab] = useState<Tab>('projects');
 
   const handleTabClick = (tab: Tab) => {
     setActiveTab(tab);
@@ -74,6 +77,10 @@ export default function ProfessionalSection() {
   );
 }
 
+const skillDataMap = new Map<string, SkillData>(
+  SKILLS_DATA.map(data => [data.id, data])
+);
+
 function SkillsTab() {
   return (
     <div className={s.skillsGrid}>
@@ -81,11 +88,17 @@ function SkillsTab() {
         <Card key={i} delay={i * 0.08}>
           <h3 className={s.skillsCategory}>{cat.category}</h3>
           <div className={s.skillsList}>
-            {cat.skills.map((skill) => (
-              <Badge key={skill} variant="neutral">
-                {skill}
-              </Badge>
-            ))}
+            {cat.skills.map((skill) => {
+              const skillData = skillDataMap.get(skill.skillDataId);
+              const Icon = skillData?.Icon;
+
+              return (
+                <Badge key={skill.skillDataId} variant="neutral">
+                  {Icon && <Icon size={18} style={{ marginRight: '8px', color: skillData.color }} />}
+                  {skill.title}
+                </Badge>
+              )
+            })}
           </div>
         </Card>
       ))}
@@ -95,12 +108,14 @@ function SkillsTab() {
 
 function ProjectsTab() {
   const [expanded, setExpanded] = useState<string | null>(null);
-
+  
   return (
     <div className={s.projectsGrid}>
       {professionalContent.projects.map((project, i) => (
         <Reveal key={project.id} delay={i * 0.1}>
           <article className={s.projectCard}>
+
+            {/* Title and links */}
             <div className={s.projectHeader}>
               <h3 className={s.projectTitle}>{project.title}</h3>
               <div className={s.projectLinks}>
@@ -112,7 +127,7 @@ function ProjectsTab() {
                     className={s.iconLink}
                     aria-label={`${project.title} on GitHub`}
                   >
-                    <Github size={16} />
+                    <Github size={18} />
                   </a>
                 )}
                 {project.demoUrl && (
@@ -123,20 +138,36 @@ function ProjectsTab() {
                     className={s.iconLink}
                     aria-label={`${project.title} demo`}
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={18} />
                   </a>
                 )}
               </div>
             </div>
 
-            {/* Technology tags */}
+            {/* Skill tags */}
             <div className={s.techRow}>
-              {project.technologies.map((tech) => (
-                <Badge key={tech} variant="secondary">
-                  {tech}
-                </Badge>
-              ))}
+              {project.skills.map((skill) => {
+                const skillData = skillDataMap.get(skill.skillDataId);
+                const Icon = skillData?.Icon;
+
+                return (
+                  <Badge key={skill.skillDataId} variant="secondary">
+                    {Icon && <Icon size={18} style={{ marginRight: '8px', color: skillData.color}} />}
+                    {skill.title}
+                  </Badge>
+                );
+              })}
             </div>
+
+            {/* Project image */}
+            {project.image &&
+              <div>
+                <img
+                  src={project.image}
+                  className={s.projectImage}
+                />
+              </div>
+            }
 
             <div className={s.projectSection}>
               <p className={`${s.projectLabel} ${s.labelAccent}`}>Problem</p>
