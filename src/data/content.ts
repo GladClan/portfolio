@@ -14,6 +14,8 @@ import { Skills_Data_Id_Enum } from './skillsdata';
 
 const resumePdfUrl = `${import.meta.env.BASE_URL}${encodeURI('Isaac Glad Resume 2026.pdf')}`;
 const lampGifUrl = `${import.meta.env.BASE_URL}${encodeURI('lamps-game-art.gif')}`
+const mcpImageUrl = `${import.meta.env.BASE_URL}${encodeURI('mcp-sql-claude.jpg')}`
+export const heroImageUrl = `${import.meta.env.BASE_URL}${encodeURI('hero-photo.jpg')}`
 
 export const navItems: NavItem[] = [
   { id: 'home', label: 'Home' },
@@ -30,8 +32,8 @@ export const homeContent: HomeContent = {
   name: 'Isaac Glad',
   title: 'Value-Driven Software Engineer',
   intro:
-    'Hello there! I\'m a software engineer who builds software with intention—crafting systems that are not only robust and elegant, but ethically grounded. This portfolio traces my journey as a developer and as a person of faith, exploring where engineering excellence meets spiritual responsibility.\n\n'
-      + 'In a world of vibe coders, I\'m a coder who actually knows what they\'re doing.',
+    'Hello there! I\'m a software engineer who builds software with intention—crafting systems that are not only robust and elegant, but ethically grounded. This portfolio traces my journey as a developer and as a person of faith, exploring where engineering excellence meets spiritual responsibility.',
+      // + 'In a world of vibe coders, I\'m a coder who actually knows what they\'re doing.',
   resumeUrl: '#professional',
   githubUrl: 'https://github.com/gladclan',
   linkedinUrl: 'https://linkedin.com/in/isaac-glad',
@@ -261,6 +263,7 @@ export const professionalContent: ProfessionalContent = {
     {
       id: 'mcp',
       title: 'SQL MCP Server',
+      image: mcpImageUrl,
       problem:
         'Contract Appliance had a large legacy Point of Sale database containing valuable business information, but querying it required extensive SQL knowledge. Company executives wanted to ask natural language questions through Claude AI without requiring direct database access.',
       solution:
@@ -451,6 +454,7 @@ export const professionalContent: ProfessionalContent = {
       id: 'lamps-game',
       title: 'Lamps Game',
       image: lampGifUrl,
+      pixelated: true,
       problem:
         'Our goal was to create a game that communicated a meaningful message while delivering an engaging player experience.',
       solution:

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Github, Linkedin } from 'lucide-react';
-import { homeContent, navItems, professionalContent } from '../data/content';
+import { heroImageUrl, homeContent, navItems, professionalContent } from '../data/content';
 import s from './HomeSection.module.css';
 
 export default function HomeSection() {
@@ -56,7 +56,7 @@ export default function HomeSection() {
             {/* Right side: picture */}
             <div className={s.introAndPictureSection}>
               <img
-                src='https://media.licdn.com/dms/image/v2/D5603AQGRAmGgDD4whQ/profile-displayphoto-shrink_400_400/B56ZW.xNahHEAg-/0/1742662326243?e=1787788800&v=beta&t=L5uR3G4c3O5jhjhnEUyKIkKIgdFZ80lZRHJDDjrrhKg'
+                src={heroImageUrl}
                 className={s.heroPicture}
               />
             </div>

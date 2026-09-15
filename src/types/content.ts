@@ -56,6 +56,7 @@ export interface Project {
   id: string;
   title: string;
   image?: string;
+  pixelated?: boolean;
   problem: string;
   solution: string;
   skills: Skill[];

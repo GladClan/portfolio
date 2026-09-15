@@ -168,16 +168,20 @@
 }
 
 .projectImage {
-  height: clamp(150px, 20vh, 260px);
-  image-rendering: crisp-edges;
+  width: 100%;
+  /* height: clamp(150px, 20vh, 260px); */
   border-radius: 10px;
 }
 
-@media (min-width: 768px) {
+.pixelImage {
+  image-rendering: crisp-edges;
+}
+
+/* @media (min-width: 768px) {
   .projectImage {
     height: clamp(200px, 50vh, 600px);
   }
-}
+} */
 
 .projectHeader {
   display: flex;

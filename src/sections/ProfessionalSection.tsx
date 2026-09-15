@@ -10,7 +10,6 @@ import { professionalContent } from '../data/content';
 import { SKILLS_DATA } from '../data/skillsdata';
 import s from './ProfessionalSection.module.css';
 import { SkillData } from '../types/skillsdata';
-import { IconType } from 'react-icons';
 
 type Tab = 'skills' | 'projects' | 'certifications' | 'resume';
 
@@ -164,7 +163,7 @@ function ProjectsTab() {
               <div>
                 <img
                   src={project.image}
-                  className={s.projectImage}
+                  className={`${s.projectImage} ${project.pixelated ? s.pixelImage : ""}`}
                 />
               </div>
             }
